@@ -14,19 +14,19 @@
 
 namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
 {
-    using Microsoft.Azure.Commands.Common.Authentication;
-    using Microsoft.Azure.Commands.Common.Authentication.Abstractions;
-    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Common;
-    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models;
-    using Microsoft.Azure.Commands.ResourceManager.Common;
-    using Microsoft.Azure.Management.Peering;
-    using Microsoft.Azure.Management.Peering.Models;
-    using Microsoft.Rest.Azure;
-
     using System;
     using System.Linq;
     using System.Management.Automation;
     using System.Net.Sockets;
+
+    using Microsoft.Azure.Commands.Common.Authentication;
+    using Microsoft.Azure.Commands.Common.Authentication.Abstractions;
+    using Microsoft.Azure.Commands.ResourceManager.Common;
+    using Microsoft.Azure.Management.Peering;
+    using Microsoft.Azure.Management.Peering.Models;
+    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common;
+    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
+    using Microsoft.Rest.Azure;
 
     /// <summary>
     ///     The Peering base cmdlet

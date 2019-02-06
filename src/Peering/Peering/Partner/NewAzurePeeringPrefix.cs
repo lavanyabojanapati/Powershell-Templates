@@ -17,7 +17,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
     using System;
     using System.Management.Automation;
 
-    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models;
+    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
     using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
     using Microsoft.Azure.Management.Peering;
     using Microsoft.Azure.Management.Peering.Models;
@@ -26,9 +26,9 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
     /// <summary>
     ///     New Azure Peering Command-let
     /// </summary>
-    [Cmdlet(VerbsCommon.New, "AzureRmPeeringPrefix", DefaultParameterSetName = Constants.ParameterSetNamePrefix)]
+    [Cmdlet(VerbsCommon.New, "AzPeeringPrefix", DefaultParameterSetName = Constants.ParameterSetNamePrefix)]
     [OutputType(typeof(PSPeeringPrefix))]
-    public class NewAzureRmPeeringPrefix : PeeringBaseCmdlet
+    public class NewAzPeeringPrefix : PeeringBaseCmdlet
     {
         /// <summary>
         ///     Gets or sets the Peering name.

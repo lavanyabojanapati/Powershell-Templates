@@ -14,7 +14,7 @@
 
 namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
 {
-    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models;
+    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
     using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
     using Microsoft.Azure.Management.Peering;
     using Microsoft.Azure.Management.Peering.Models;
@@ -28,7 +28,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
     /// </summary>
     [Cmdlet(
         VerbsCommon.New,
-        "AzureRmExchangePeering",
+        "AzExchangePeering",
         DefaultParameterSetName = Constants.ParameterSetNameIPv4Prefix)]
     [OutputType(typeof(PSPeering))]
     public class NewAzureExchangePeeringCommand : PeeringBaseCmdlet

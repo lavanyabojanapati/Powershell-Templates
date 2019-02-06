@@ -1,41 +1,41 @@
 ---
-Module Name: AzureRm.Peering
+Module Name: Az.Peering
 Module Guid: d6f014cd-a276-4b56-ab21-af34379a5c18
 Download Help Link: {{Please enter FwLink manually}}
 Help Version: 0.0.4.0
 Locale: en-US
 ---
 
-# AzureRm.Peering Module
+# Az.Peering Module
 ## Description
 The topics in this section document the Azure PowerShell cmdlets for Azure Peering in the Azure Resource Manager (ARM) framework. The cmdlets exist in the Microsoft.Azure.PowerShell.Cmdlets.Peering.Common namespace.
 
-## AzureRm.Peering Cmdlets
-### [Get-AzureRmPeering](Get-AzureRmPeering.md)
+## Az.Peering Cmdlets
+### [Get-AzPeering](Get-AzPeering.md)
 Get Peerings for a subscription.
 
-### [Get-AzureRmPeeringService](Get-AzureRmPeeringService.md)
+### [Get-AzPeeringService](Get-AzPeeringService.md)
 Get the Carriers for the subscription
 
-### [Get-AzureRmPeeringLegacyPeering](Get-AzureRmPeeringLegacyPeering.md)
+### [Get-AzPeeringLegacyPeering](Get-AzPeeringLegacyPeering.md)
 Get a list of legact peerings with Microsoft that can be converted to Direct or Exchange Peering Resources.
 
-### [Get-AzureRmPeeringLocation](Get-AzureRmPeeringLocation.md)
-Get locations of Peering sites to be used in conjunction with New-AzureRm cmdlets.
+### [Get-AzPeeringLocation](Get-AzPeeringLocation.md)
+Get locations of Peering sites to be used in conjunction with New-Az cmdlets.
 
-### [Get-AzureRmPeeringSubscriber](Get-AzureRmPeeringSubscriber.md)
+### [Get-AzPeeringSubscriber](Get-AzPeeringSubscriber.md)
 Get Peering subscribers of the subscription. 
 
 
-### [New-AzureRmDirectPeering](New-AzureRmDirectPeering.md)
+### [New-AzDirectPeering](New-AzDirectPeering.md)
 Create or convert to a new direct Peering.
 
-### [New-AzureRmExchangePeering](New-AzureRmExchangePeering.md)
+### [New-AzExchangePeering](New-AzExchangePeering.md)
 Create or convert to a new exchange Peering.
 
-### [Set-AzureRmPeering](Set-AzureRmPeering.md)
+### [Set-AzPeering](Set-AzPeering.md)
 Update Peering resource.
 
-### [Set-AzureRmPeeringSubscriber](Set-AzureRmPeeringSubscriber.md)
+### [Set-AzPeeringSubscriber](Set-AzPeeringSubscriber.md)
 Update subscriber resource.
 

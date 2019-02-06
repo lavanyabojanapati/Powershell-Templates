@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-AzureRmPeeringService
+# Get-AzPeeringService
 
 ## SYNOPSIS
 Get the Carriers for the subscription
@@ -13,17 +13,17 @@ Get the Carriers for the subscription
 ## SYNTAX
 
 ```
-Get-AzureRmPeeringService [-AsJob] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzPeeringService [-AsJob] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-AzureRmPeeringService** cmdlet gets the Carriers of the subscription.
+The **Get-AzPeeringService** cmdlet gets the Carriers of the subscription.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzureRmPeeringService
+PS C:\> Get-AzPeeringService
 ```
 
 Lists all Carriers avaliable to subscription.
@@ -51,7 +51,7 @@ The credentials, account, tenant, and subscription used for communication with A
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: AzContext, AzureCredential
 
 Required: False
 Position: Named
@@ -69,7 +69,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringService
+### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringService
 
 ## NOTES
 

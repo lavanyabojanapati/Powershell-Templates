@@ -12,7 +12,7 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
-namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
+namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Peering
 {
     using System;
     using System.Linq;
@@ -20,12 +20,13 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
 
     using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
     using Microsoft.Azure.Management.Peering;
-    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models;
+    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common;
+    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
 
     /// <summary>
     ///     The get Peering locations.
     /// </summary>
-    [Cmdlet(VerbsCommon.Get, "AzureRmPeeringLocation")]
+    [Cmdlet(VerbsCommon.Get, "AzPeeringLocation")]
     [OutputType(typeof(PSPeeringLocation))]
     public class GetAzurePeeringLocationCommand : PeeringBaseCmdlet
     {

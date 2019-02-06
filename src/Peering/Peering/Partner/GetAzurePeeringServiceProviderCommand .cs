@@ -18,14 +18,14 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
     using System.Linq;
     using System.Management.Automation;
 
-    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models;
+    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
     using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
     using Microsoft.Azure.Management.Peering;
 
     /// <summary>
     ///     The get Peering locations.
     /// </summary>
-    [Cmdlet(VerbsCommon.Get, "AzureRmPeeringServiceProvider")]
+    [Cmdlet(VerbsCommon.Get, "AzPeeringServiceProvider")]
     [OutputType(typeof(PSPeeringLocation))]
     public class GetAzurePeeringServiceProviderCommand : PeeringBaseCmdlet
     {

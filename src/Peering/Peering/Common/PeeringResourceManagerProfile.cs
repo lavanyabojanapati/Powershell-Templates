@@ -12,12 +12,12 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
-using AutoMapper;
-
 namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
 {
-    using CNM = Models;
-    using MNM = Management.Peering.Models;
+    using AutoMapper;
+
+    using CNM = Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
+    using MNM = Microsoft.Azure.Management.Peering.Models;
     using Profile = AutoMapper.Profile;
 
     /// <summary>
@@ -25,12 +25,18 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
     /// </summary>
     public class PeeringResourceManagerProfile : Profile
     {
-        private static IMapper mapper;
-
+        /// <summary>
+        /// The lock.
+        /// </summary>
         private static readonly object Lock = new object();
 
         /// <summary>
-        /// The network resource manager mapper
+        /// The mapper.
+        /// </summary>
+        private static IMapper mapper;
+
+        /// <summary>
+        /// Gets The network resource manager mapper
         /// </summary>
         public static IMapper Mapper
         {
@@ -50,49 +56,52 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
         /// </summary>
         public override string ProfileName => "NetworkResourceManagerProfile";
 
+        /// <summary>
+        /// The initialize.
+        /// </summary>
         private static void Initialize()
         {
-            var config = new MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile<PeeringResourceManagerProfile>();
+            var config = new MapperConfiguration(
+                cfg =>
+                    {
+                        cfg.AddProfile<PeeringResourceManagerProfile>();
 
-                // MNM to CNM 
-                cfg.CreateMap<MNM.BgpCommunity, CNM.PSBgpCommunity>();
-                cfg.CreateMap<MNM.BgpSession, CNM.PSBgpSession>();
-                cfg.CreateMap<MNM.DirectConnection, CNM.PSDirectConnection>();
-                cfg.CreateMap<MNM.DirectPeeringFacility, CNM.PSDirectPeeringFacility>();
-                cfg.CreateMap<MNM.ExchangeConnection, CNM.PSExchangeConnection>();
-                cfg.CreateMap<MNM.ExchangePeeringFacility, CNM.PSExchangePeeringFacility>();
-                cfg.CreateMap<MNM.PeeringModel, CNM.PSPeering>();
-                cfg.CreateMap<MNM.PeeringBandwidthOffer, CNM.PSPeeringBandwidthOffer>();
-                cfg.CreateMap<MNM.PeeringLocation, CNM.PSPeeringLocation>();
-                cfg.CreateMap<MNM.PeeringPartner, CNM.PSPeeringPartner>();
-                cfg.CreateMap<MNM.PeeringPrefix, CNM.PSPeeringPrefix>();
-                cfg.CreateMap<MNM.PeeringPropertiesDirect, CNM.PSPeeringPropertiesDirect>();
-                cfg.CreateMap<MNM.PeeringPropertiesPartner, CNM.PSPeeringPropertiesPartner>();
-                cfg.CreateMap<MNM.PeeringSku, CNM.PSPeeringSku>();
-                cfg.CreateMap<MNM.PeeringSubscriber, CNM.PSPeeringSubscriber>();
-                cfg.CreateMap<MNM.ResourceIdentifier, CNM.PSResourceIdentifier>();
+                        // MNM to CNM 
+                        cfg.CreateMap<MNM.BgpCommunity, CNM.PSBgpCommunity>();
+                        cfg.CreateMap<MNM.BgpSession, CNM.PSBgpSession>();
+                        cfg.CreateMap<MNM.DirectConnection, CNM.PSDirectConnection>();
+                        cfg.CreateMap<MNM.DirectPeeringFacility, CNM.PSDirectPeeringFacility>();
+                        cfg.CreateMap<MNM.ExchangeConnection, CNM.PSExchangeConnection>();
+                        cfg.CreateMap<MNM.ExchangePeeringFacility, CNM.PSExchangePeeringFacility>();
+                        cfg.CreateMap<MNM.PeeringModel, CNM.PSPeering>();
+                        cfg.CreateMap<MNM.PeeringBandwidthOffer, CNM.PSPeeringBandwidthOffer>();
+                        cfg.CreateMap<MNM.PeeringLocation, CNM.PSPeeringLocation>();
+                        cfg.CreateMap<MNM.PeeringPartner, CNM.PSPeeringPartner>();
+                        cfg.CreateMap<MNM.PeeringPrefix, CNM.PSPeeringPrefix>();
+                        cfg.CreateMap<MNM.PeeringPropertiesDirect, CNM.PSPeeringPropertiesDirect>();
+                        cfg.CreateMap<MNM.PeeringPropertiesPartner, CNM.PSPeeringPropertiesPartner>();
+                        cfg.CreateMap<MNM.PeeringSku, CNM.PSPeeringSku>();
+                        cfg.CreateMap<MNM.PeeringSubscriber, CNM.PSPeeringSubscriber>();
+                        cfg.CreateMap<MNM.ResourceIdentifier, CNM.PSResourceIdentifier>();
 
-                // CNM to MNM
-                cfg.CreateMap<CNM.PSBgpCommunity, MNM.BgpCommunity>();
-                cfg.CreateMap<CNM.PSBgpSession, MNM.BgpSession>();
-                cfg.CreateMap<CNM.PSDirectConnection, MNM.DirectConnection>();
-                cfg.CreateMap<CNM.PSDirectPeeringFacility, MNM.DirectPeeringFacility>();
-                cfg.CreateMap<CNM.PSExchangeConnection, MNM.ExchangeConnection>();
-                cfg.CreateMap<CNM.PSExchangePeeringFacility, MNM.ExchangePeeringFacility>();
-                cfg.CreateMap<CNM.PSPeering, MNM.PeeringModel>();
-                cfg.CreateMap<CNM.PSPeeringBandwidthOffer, MNM.PeeringBandwidthOffer>();
-                cfg.CreateMap<CNM.PSPeeringLocation, MNM.PeeringLocation>();
-                cfg.CreateMap<CNM.PSPeeringPartner, MNM.PeeringPartner>();
-                cfg.CreateMap<CNM.PSPeeringPrefix, MNM.PeeringPrefix>();
-                cfg.CreateMap<CNM.PSPeeringPropertiesDirect, MNM.PeeringPropertiesDirect>();
-                cfg.CreateMap<CNM.PSPeeringPropertiesPartner, MNM.PeeringPropertiesPartner>();
-                cfg.CreateMap<CNM.PSPeeringSku, MNM.PeeringSku>();
-                cfg.CreateMap<CNM.PSPeeringSubscriber, MNM.PeeringSubscriber>();
-                cfg.CreateMap<CNM.PSResourceIdentifier, MNM.ResourceIdentifier>();
-
-            });
+                        // CNM to MNM
+                        cfg.CreateMap<CNM.PSBgpCommunity, MNM.BgpCommunity>();
+                        cfg.CreateMap<CNM.PSBgpSession, MNM.BgpSession>();
+                        cfg.CreateMap<CNM.PSDirectConnection, MNM.DirectConnection>();
+                        cfg.CreateMap<CNM.PSDirectPeeringFacility, MNM.DirectPeeringFacility>();
+                        cfg.CreateMap<CNM.PSExchangeConnection, MNM.ExchangeConnection>();
+                        cfg.CreateMap<CNM.PSExchangePeeringFacility, MNM.ExchangePeeringFacility>();
+                        cfg.CreateMap<CNM.PSPeering, MNM.PeeringModel>();
+                        cfg.CreateMap<CNM.PSPeeringBandwidthOffer, MNM.PeeringBandwidthOffer>();
+                        cfg.CreateMap<CNM.PSPeeringLocation, MNM.PeeringLocation>();
+                        cfg.CreateMap<CNM.PSPeeringPartner, MNM.PeeringPartner>();
+                        cfg.CreateMap<CNM.PSPeeringPrefix, MNM.PeeringPrefix>();
+                        cfg.CreateMap<CNM.PSPeeringPropertiesDirect, MNM.PeeringPropertiesDirect>();
+                        cfg.CreateMap<CNM.PSPeeringPropertiesPartner, MNM.PeeringPropertiesPartner>();
+                        cfg.CreateMap<CNM.PSPeeringSku, MNM.PeeringSku>();
+                        cfg.CreateMap<CNM.PSPeeringSubscriber, MNM.PeeringSubscriber>();
+                        cfg.CreateMap<CNM.PSResourceIdentifier, MNM.ResourceIdentifier>();
+                    });
             mapper = config.CreateMapper();
         }
     }

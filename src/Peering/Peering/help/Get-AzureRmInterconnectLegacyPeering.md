@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-AzureRmPeeringLegacyPeering
+# Get-AzPeeringLegacyPeering
 
 ## SYNOPSIS
 Get a list of legact peerings with Microsoft that can be converted to Direct or Exchange Peering Resources.
@@ -13,18 +13,18 @@ Get a list of legact peerings with Microsoft that can be converted to Direct or 
 ## SYNTAX
 
 ```
-Get-AzureRmPeeringLegacyPeering [-Kind] <String> [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+Get-AzPeeringLegacyPeering [-Kind] <String> [-AsJob] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Use **Get-AzureRmPeeringLegacyPeering** cmdlet to convert legacy objects to new Direct or Exchange Peering objects. 
+Use **Get-AzPeeringLegacyPeering** cmdlet to convert legacy objects to new Direct or Exchange Peering objects. 
 
 ## EXAMPLES
 
 ### Simple Get
 ```powershell
-PS C:\> Get-AzureRmPeeringLegacyPeering -Kind Exchange
+PS C:\> Get-AzPeeringLegacyPeering -Kind Exchange
 
 Name                      : legacyExchangePeering
 Sku                       : Basic_Exchange_Free
@@ -45,12 +45,12 @@ Type                      : Microsoft.Peering/Peerings
 Tags                      : {}
 ```
 
-Gets the legacy exchange peerings with Microsoft. These can be saved to powershell variables and converted to [`New-AzureRmExchangePeering`](New-AzureRmExchangePeering.md). See Example 2. 
+Gets the legacy exchange peerings with Microsoft. These can be saved to powershell variables and converted to [`New-AzExchangePeering`](New-AzExchangePeering.md). See Example 2. 
 
 ### Get and Pipe to New Exchange Peering
 ```powershell
-PS C:\> $legacy = Get-AzureRmPeeringLegacyPeering -Kind Exchange`
-PS C:\>$legacy[0] | New-AzureRmExchangePeering -PeeringName AMSContosoExchange -ResourceGroupName ContosoAMSResourceGroup -Location westus -MaxPrefixesAdvertisedIPv4 155 -MaxPrefixesAdvertisedIPv6 2048`
+PS C:\> $legacy = Get-AzPeeringLegacyPeering -Kind Exchange`
+PS C:\>$legacy[0] | New-AzExchangePeering -PeeringName AMSContosoExchange -ResourceGroupName ContosoAMSResourceGroup -Location westus -MaxPrefixesAdvertisedIPv4 155 -MaxPrefixesAdvertisedIPv6 2048`
 
 
 Name                      : AMSContosoExchange
@@ -94,7 +94,7 @@ The credentials, account, tenant, and subscription used for communication with A
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: AzContext, AzureCredential
 
 Required: False
 Position: Named
@@ -128,7 +128,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering
+### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering
 
 ## NOTES
 

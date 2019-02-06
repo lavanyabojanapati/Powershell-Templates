@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# New-AzureRmPeeringService
+# New-AzPeeringService
 
 ## SYNOPSIS
 {{Fill in the Synopsis}}
@@ -13,7 +13,7 @@ schema: 2.0.0
 ## SYNTAX
 
 ```
-New-AzureRmPeeringService [-PeeringName] <String> [-ResourceGroupName] <String>
+New-AzPeeringService [-PeeringName] <String> [-ResourceGroupName] <String>
  -PeeringLocation <String> -CarrierName <String> [-AsJob] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
@@ -68,7 +68,7 @@ The credentials, account, tenant, and subscription used for communication with A
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: AzContext, AzureCredential
 
 Required: False
 Position: Named
@@ -131,7 +131,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering
+### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering
 
 ## NOTES
 

@@ -12,22 +12,21 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
-namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
+namespace Microsoft.Azure.PowerShell.Cmdlets.Peering
 {
-    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models;
-    using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
-    using Microsoft.Azure.Management.Peering;
-    using Microsoft.Azure.Management.Peering.Models;
-    using Microsoft.Rest;
     using System;
     using System.Management.Automation;
 
-    using Name = Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.Name;
+    using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
+    using Microsoft.Azure.Management.Peering;
+    using Microsoft.Azure.Management.Peering.Models;
+    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common;
+    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
 
     /// <summary>
     ///     New Azure Peering Command-let
     /// </summary>
-    [Cmdlet(VerbsCommon.New, "AzureRmPeeringService", DefaultParameterSetName = Constants.PeeringService)]
+    [Cmdlet(VerbsCommon.New, "AzPeeringService", DefaultParameterSetName = Constants.PeeringService)]
     [OutputType(typeof(PSPeering))]
     public class NewAzurePeeringServiceCommand : PeeringBaseCmdlet
     {
@@ -104,7 +103,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
             }
 
             var psSku = new PSPeeringSku();
-            psSku.Name = Name.PremiumPartnerMetered;
+            psSku.Name = Constants.PremiumPartnerMetered;
             PeeringRequest.Sku = psSku;
 
             try

@@ -12,12 +12,13 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
-using System;
-using System.Text;
-using Microsoft.Rest.Azure;
-
 namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
 {
+    using System;
+    using System.Text;
+
+    using Microsoft.Rest.Azure;
+
     /// <summary>
     /// The network cloud exception.
     /// </summary>

@@ -2,19 +2,19 @@
 <helpItems schema="maml" xmlns="http://msh">
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Get-AzureRmPeering</command:name>
+      <command:name>Get-AzPeering</command:name>
       <command:verb>Get</command:verb>
-      <command:noun>AzureRmPeering</command:noun>
+      <command:noun>AzPeering</command:noun>
       <maml:description>
         <maml:para>Get Peerings for a subscription.</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>The Get-AzureRmPeering cmdlet gets the Peerings of the subscription, resource group, or specific Peering name.</maml:para>
+      <maml:para>The Get-AzPeering cmdlet gets the Peerings of the subscription, resource group, or specific Peering name.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Get-AzureRmPeering</maml:name>
+        <maml:name>Get-AzPeering</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>AsJob</maml:name>
           <maml:Description>
@@ -26,7 +26,7 @@
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -64,7 +64,7 @@
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>Get-AzureRmPeering</maml:name>
+        <maml:name>Get-AzPeering</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>AsJob</maml:name>
           <maml:Description>
@@ -76,7 +76,7 @@
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -125,7 +125,7 @@
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>Get-AzureRmPeering</maml:name>
+        <maml:name>Get-AzPeering</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>AsJob</maml:name>
           <maml:Description>
@@ -137,7 +137,7 @@
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -183,7 +183,7 @@
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>Get-AzureRmPeering</maml:name>
+        <maml:name>Get-AzPeering</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>AsJob</maml:name>
           <maml:Description>
@@ -195,7 +195,7 @@
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -229,7 +229,7 @@
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>Get-AzureRmPeering</maml:name>
+        <maml:name>Get-AzPeering</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>AsJob</maml:name>
           <maml:Description>
@@ -241,7 +241,7 @@
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -280,7 +280,7 @@
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -362,7 +362,7 @@
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
@@ -377,10 +377,10 @@
     <command:examples>
       <command:example>
         <maml:title>-------- Example 1: Get Peering for Subscriptions --------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzureRmPeering
- Sku        : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSku
+        <dev:code>PS C:\&gt; Get-AzPeering
+ Sku        : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSku
 Kind       : Direct
-Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringProperties
+Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringProperties
 Name       : Contoso0Peeringbldg41
 Id         : /subscriptions/XXXXXXX-61c4-436f-XXXX-XXXXXXXXX/resourceGroups/Contoso0/providers/Microsoft.Peering/in
              terconnects/Contoso0Peeringbldg41
@@ -389,9 +389,9 @@ Location   :LAX
 ETag       :
 Tags       : {}
 
- Sku        : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSku
+ Sku        : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSku
 Kind       : Direct
-Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringProperties
+Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringProperties
 Name       : Contoso1Peeringbldg40
 Id         : /subscriptions/XXXXXXX-61c4-436f-XXXX-XXXXXXXXX/resourceGroups/Contoso1/providers/Microsoft.Peering/in
              terconnects/Contoso1Peeringbldg40
@@ -405,10 +405,10 @@ Tags       : {}</dev:code>
       </command:example>
       <command:example>
         <maml:title>-------- Example 2: Get Peering for Resource Group --------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzureRmPeering -ResourceGroupName Contoso1
- Sku        : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSku
+        <dev:code>PS C:\&gt; Get-AzPeering -ResourceGroupName Contoso1
+ Sku        : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSku
 Kind       : Direct
-Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringProperties
+Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringProperties
 Name       : Contoso1Peeringbldg40
 Id         : /subscriptions/XXXXXXX-61c4-436f-XXXX-XXXXXXXXX/resourceGroups/Contoso1/providers/Microsoft.Peering/in
              terconnects/Contoso1Peeringbldg40
@@ -422,10 +422,10 @@ Tags       : {}</dev:code>
       </command:example>
       <command:example>
         <maml:title>------------- Example 3: Get Peering details -------------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzureRmPeering -Name MyTinyPeering -ResourceGroupName rg0
- Sku        : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSku
+        <dev:code>PS C:\&gt; Get-AzPeering -Name MyTinyPeering -ResourceGroupName rg0
+ Sku        : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSku
 Kind       : Direct
-Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringProperties
+Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringProperties
 Name       : MyTinyPeering
 Id         : /subscriptions/XXXXXXX-61c4-436f-XXXX-XXXXXXXXX/resourceGroups/Contoso1/providers/Microsoft.Peering/in
              terconnects/MyTinyPeering
@@ -442,20 +442,20 @@ Tags       : {}</dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Get-AzureRmPeeringBandwidthOffer</command:name>
+      <command:name>Get-AzPeeringBandwidthOffer</command:name>
       <command:verb>Get</command:verb>
-      <command:noun>AzureRmPeeringBandwidthOffer</command:noun>
+      <command:noun>AzPeeringBandwidthOffer</command:noun>
       <maml:description>
         <maml:para>Gets Bandwidth offers avaliable for a subscription. Applies to both Direct and Partner Peering.</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>The Get-AzureRmPeeringBandwidthOffer cmdlet gets bandwidth offers for the subscription.</maml:para>
+      <maml:para>The Get-AzPeeringBandwidthOffer cmdlet gets bandwidth offers for the subscription.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Get-AzureRmPeeringBandwidthOffer</maml:name>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <maml:name>Get-AzPeeringBandwidthOffer</maml:name>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -506,7 +506,7 @@ Tags       : {}</dev:code>
       </command:syntaxItem>
     </command:syntax>
     <command:parameters>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -568,7 +568,7 @@ Tags       : {}</dev:code>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringBandwidthOffer</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringBandwidthOffer</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
@@ -583,7 +583,7 @@ Tags       : {}</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzureRmPeeringBandwidthOffer -ResourceGroupName rg0 -PeeringName MyPeering 
+        <dev:code>PS C:\&gt; Get-AzPeeringBandwidthOffer -ResourceGroupName rg0 -PeeringName MyPeering 
 list of offers</dev:code>
         <dev:remarks>
           <maml:para></maml:para>
@@ -594,19 +594,19 @@ list of offers</dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Get-AzureRmPeeringService</command:name>
+      <command:name>Get-AzPeeringService</command:name>
       <command:verb>Get</command:verb>
-      <command:noun>AzureRmPeeringService</command:noun>
+      <command:noun>AzPeeringService</command:noun>
       <maml:description>
         <maml:para>Get the Carriers for the subscription</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>The Get-AzureRmPeeringService cmdlet gets the Carriers of the subscription.</maml:para>
+      <maml:para>The Get-AzPeeringService cmdlet gets the Carriers of the subscription.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Get-AzureRmPeeringService</maml:name>
+        <maml:name>Get-AzPeeringService</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>AsJob</maml:name>
           <maml:Description>
@@ -618,7 +618,7 @@ list of offers</dev:code>
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -645,7 +645,7 @@ list of offers</dev:code>
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -671,7 +671,7 @@ list of offers</dev:code>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringService</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringService</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
@@ -686,7 +686,7 @@ list of offers</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzureRmPeeringService</dev:code>
+        <dev:code>PS C:\&gt; Get-AzPeeringService</dev:code>
         <dev:remarks>
           <maml:para>Lists all Carriers avaliable to subscription.</maml:para>
         </dev:remarks>
@@ -696,19 +696,19 @@ list of offers</dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Get-AzureRmPeeringLegacyDirectPeering</command:name>
+      <command:name>Get-AzPeeringLegacyDirectPeering</command:name>
       <command:verb>Get</command:verb>
-      <command:noun>AzureRmPeeringLegacyDirectPeering</command:noun>
+      <command:noun>AzPeeringLegacyDirectPeering</command:noun>
       <maml:description>
         <maml:para>Get a list of legact peerings with Microsoft that can be converted to Direct Peering Resources.</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>Use Get-AzureRmPeeringLegacyDirectPeering cmdlet to convert legacy objects to new Direct Peering objects.</maml:para>
+      <maml:para>Use Get-AzPeeringLegacyDirectPeering cmdlet to convert legacy objects to new Direct Peering objects.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Get-AzureRmPeeringLegacyDirectPeering</maml:name>
+        <maml:name>Get-AzPeeringLegacyDirectPeering</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>AsJob</maml:name>
           <maml:Description>
@@ -720,7 +720,7 @@ list of offers</dev:code>
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -747,7 +747,7 @@ list of offers</dev:code>
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -773,7 +773,7 @@ list of offers</dev:code>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
@@ -788,14 +788,14 @@ list of offers</dev:code>
     <command:examples>
       <command:example>
         <maml:title>------------------------ Example 1:List ------------------------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzureRmPeeringLegacyDirectPeering</dev:code>
+        <dev:code>PS C:\&gt; Get-AzPeeringLegacyDirectPeering</dev:code>
         <dev:remarks>
           <maml:para>Lists Legacy Direct Peering Objects</maml:para>
         </dev:remarks>
       </command:example>
       <command:example>
         <maml:title>-------------------------- Example 2: --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzureRmPeeringLegacyDirectPeering | foreach {New-AzureRmPeering -Name $_.Properties.PeeringLocation.Insert(0,"Peering") -ResourceGroupName rg0 -DeviceLocation $_.Properties.PeeringLocation -SkuName $_.Sku.Name -Tier $_.Sku.Tier -Family $_.Sku.Family -Size $_.Sku.Size -DeviceName Rapter1,Rapter2 -coloId 1ed,2ed -rackId a,b -portId 1,2,3,4,5 -SessionIPv4Prefix $_.Properties.Direct.ADeviceSession.SessionIPv4Prefix,$_.Properties.Direct.BDeviceSession.SessionIPv4Prefix -SessionIPv6Prefix $_.Properties.Direct.ADeviceSession.SessionIPv6Prefix,$_.Properties.Direct.BDeviceSession.SessionIPv6Prefix -Bandwidth $_.Properties.Direct.BandwidthInGpbs -AsJob -Force}</dev:code>
+        <dev:code>PS C:\&gt; Get-AzPeeringLegacyDirectPeering | foreach {New-AzPeering -Name $_.Properties.PeeringLocation.Insert(0,"Peering") -ResourceGroupName rg0 -DeviceLocation $_.Properties.PeeringLocation -SkuName $_.Sku.Name -Tier $_.Sku.Tier -Family $_.Sku.Family -Size $_.Sku.Size -DeviceName Rapter1,Rapter2 -coloId 1ed,2ed -rackId a,b -portId 1,2,3,4,5 -SessionIPv4Prefix $_.Properties.Direct.ADeviceSession.SessionIPv4Prefix,$_.Properties.Direct.BDeviceSession.SessionIPv4Prefix -SessionIPv6Prefix $_.Properties.Direct.ADeviceSession.SessionIPv6Prefix,$_.Properties.Direct.BDeviceSession.SessionIPv6Prefix -Bandwidth $_.Properties.Direct.BandwidthInGpbs -AsJob -Force}</dev:code>
         <dev:remarks>
           <maml:para>Converts all existing Legacy Direct Peerings into Peering objects.</maml:para>
         </dev:remarks>
@@ -805,19 +805,19 @@ list of offers</dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Get-AzureRmPeeringLocation</command:name>
+      <command:name>Get-AzPeeringLocation</command:name>
       <command:verb>Get</command:verb>
-      <command:noun>AzureRmPeeringLocation</command:noun>
+      <command:noun>AzPeeringLocation</command:noun>
       <maml:description>
         <maml:para>Get locations of Peering sites</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>The Get-AzureRmPeeringLocation cmdlet gets locations of Peerings</maml:para>
+      <maml:para>The Get-AzPeeringLocation cmdlet gets locations of Peerings</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Get-AzureRmPeeringLocation</maml:name>
+        <maml:name>Get-AzPeeringLocation</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>Kind</maml:name>
           <maml:Description>
@@ -847,7 +847,7 @@ list of offers</dev:code>
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -874,7 +874,7 @@ list of offers</dev:code>
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -912,7 +912,7 @@ list of offers</dev:code>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringLocation</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringLocation</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
@@ -927,9 +927,9 @@ list of offers</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzureRmPeeringLocation
+        <dev:code>PS C:\&gt; Get-AzPeeringLocation
 
-Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringLocationProperties
+Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringLocationProperties
 Name       : PeeringLocation_Building40
 Id         :
 Type       : Microsoft.Peering/PeeringLocations
@@ -937,7 +937,7 @@ Location   :
 ETag       :
 Tags       : {}
 
-Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringLocationProperties
+Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringLocationProperties
 Name       : PeeringLocation_Building41
 Id         :
 Type       : Microsoft.Peering/PeeringLocations
@@ -946,7 +946,7 @@ ETag       :
 Tags       : {}
 
 
-Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringLocationProperties
+Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringLocationProperties
 Name       : PeeringLocation_Building42
 Id         :
 Type       : Microsoft.Peering/PeeringLocations
@@ -962,9 +962,9 @@ Tags       : {}</dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Get-AzureRmPeeringPrefix</command:name>
+      <command:name>Get-AzPeeringPrefix</command:name>
       <command:verb>Get</command:verb>
-      <command:noun>AzureRmPeeringPrefix</command:noun>
+      <command:noun>AzPeeringPrefix</command:noun>
       <maml:description>
         <maml:para>{{Fill in the Synopsis}}</maml:para>
       </maml:description>
@@ -974,7 +974,7 @@ Tags       : {}</dev:code>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Get-AzureRmPeeringPrefix</maml:name>
+        <maml:name>Get-AzPeeringPrefix</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>AsJob</maml:name>
           <maml:Description>
@@ -986,7 +986,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -1049,7 +1049,7 @@ Tags       : {}</dev:code>
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -1111,7 +1111,7 @@ Tags       : {}</dev:code>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringPrefix</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringPrefix</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
@@ -1136,19 +1136,19 @@ Tags       : {}</dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Get-AzureRmPeeringSubscriber</command:name>
+      <command:name>Get-AzPeeringSubscriber</command:name>
       <command:verb>Get</command:verb>
-      <command:noun>AzureRmPeeringSubscriber</command:noun>
+      <command:noun>AzPeeringSubscriber</command:noun>
       <maml:description>
         <maml:para>Get Peering subscribers of the subscription</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>The Get-AzureRmPeeringSubscriber cmdlet gets subscribers of the subscription</maml:para>
+      <maml:para>The Get-AzPeeringSubscriber cmdlet gets subscribers of the subscription</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Get-AzureRmPeeringSubscriber</maml:name>
+        <maml:name>Get-AzPeeringSubscriber</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>AsJob</maml:name>
           <maml:Description>
@@ -1160,7 +1160,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -1223,7 +1223,7 @@ Tags       : {}</dev:code>
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -1285,7 +1285,7 @@ Tags       : {}</dev:code>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSubscriber</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSubscriber</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
@@ -1300,7 +1300,7 @@ Tags       : {}</dev:code>
     <command:examples>
       <command:example>
         <maml:title>-------------------------- Example 1 --------------------------</maml:title>
-        <dev:code>PS C:\&gt; Get-AzureRmPeeringSubscriber -ResourceGroupeName rg0 -PeeringName MyTinyNetwork</dev:code>
+        <dev:code>PS C:\&gt; Get-AzPeeringSubscriber -ResourceGroupeName rg0 -PeeringName MyTinyNetwork</dev:code>
         <dev:remarks>
           <maml:para>{{ Add example description here }}</maml:para>
         </dev:remarks>
@@ -1310,9 +1310,9 @@ Tags       : {}</dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>New-AzureRmPeeringService</command:name>
+      <command:name>New-AzPeeringService</command:name>
       <command:verb>New</command:verb>
-      <command:noun>AzureRmPeeringService</command:noun>
+      <command:noun>AzPeeringService</command:noun>
       <maml:description>
         <maml:para>{{Fill in the Synopsis}}</maml:para>
       </maml:description>
@@ -1322,7 +1322,7 @@ Tags       : {}</dev:code>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>New-AzureRmPeeringService</maml:name>
+        <maml:name>New-AzPeeringService</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
           <maml:name>PeeringName</maml:name>
           <maml:Description>
@@ -1370,7 +1370,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -1421,7 +1421,7 @@ Tags       : {}</dev:code>
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -1483,7 +1483,7 @@ Tags       : {}</dev:code>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
@@ -1508,9 +1508,9 @@ Tags       : {}</dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>New-AzureRmCDNPeering</command:name>
+      <command:name>New-AzCDNPeering</command:name>
       <command:verb>New</command:verb>
-      <command:noun>AzureRmCDNPeering</command:noun>
+      <command:noun>AzCDNPeering</command:noun>
       <maml:description>
         <maml:para>{{Fill in the Synopsis}}</maml:para>
       </maml:description>
@@ -1520,7 +1520,7 @@ Tags       : {}</dev:code>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>New-AzureRmCDNPeering</maml:name>
+        <maml:name>New-AzCDNPeering</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
           <maml:name>PeeringName</maml:name>
           <maml:Description>
@@ -1572,7 +1572,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -1695,7 +1695,7 @@ Tags       : {}</dev:code>
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -1817,7 +1817,7 @@ Tags       : {}</dev:code>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
@@ -1842,9 +1842,9 @@ Tags       : {}</dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>New-AzureRmDirectPeering</command:name>
+      <command:name>New-AzDirectPeering</command:name>
       <command:verb>New</command:verb>
-      <command:noun>AzureRmDirectPeering</command:noun>
+      <command:noun>AzDirectPeering</command:noun>
       <maml:description>
         <maml:para>Create new direct Peering</maml:para>
       </maml:description>
@@ -1854,7 +1854,7 @@ Tags       : {}</dev:code>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>New-AzureRmDirectPeering</maml:name>
+        <maml:name>New-AzDirectPeering</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>PeeringName</maml:name>
           <maml:Description>
@@ -1968,7 +1968,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -2018,7 +2018,7 @@ Tags       : {}</dev:code>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>New-AzureRmDirectPeering</maml:name>
+        <maml:name>New-AzDirectPeering</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>PeeringName</maml:name>
           <maml:Description>
@@ -2132,7 +2132,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -2182,7 +2182,7 @@ Tags       : {}</dev:code>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>New-AzureRmDirectPeering</maml:name>
+        <maml:name>New-AzDirectPeering</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>PeeringName</maml:name>
           <maml:Description>
@@ -2296,7 +2296,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -2346,7 +2346,7 @@ Tags       : {}</dev:code>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>New-AzureRmDirectPeering</maml:name>
+        <maml:name>New-AzDirectPeering</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>PeeringName</maml:name>
           <maml:Description>
@@ -2460,7 +2460,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -2510,7 +2510,7 @@ Tags       : {}</dev:code>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>New-AzureRmDirectPeering</maml:name>
+        <maml:name>New-AzDirectPeering</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>PeeringName</maml:name>
           <maml:Description>
@@ -2624,7 +2624,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -2710,7 +2710,7 @@ Tags       : {}</dev:code>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>New-AzureRmDirectPeering</maml:name>
+        <maml:name>New-AzDirectPeering</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>PeeringName</maml:name>
           <maml:Description>
@@ -2824,7 +2824,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -2910,7 +2910,7 @@ Tags       : {}</dev:code>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>New-AzureRmDirectPeering</maml:name>
+        <maml:name>New-AzDirectPeering</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>PeeringName</maml:name>
           <maml:Description>
@@ -3024,7 +3024,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -3098,7 +3098,7 @@ Tags       : {}</dev:code>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>New-AzureRmDirectPeering</maml:name>
+        <maml:name>New-AzDirectPeering</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>PeeringName</maml:name>
           <maml:Description>
@@ -3212,7 +3212,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -3262,7 +3262,7 @@ Tags       : {}</dev:code>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>New-AzureRmDirectPeering</maml:name>
+        <maml:name>New-AzDirectPeering</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>PeeringName</maml:name>
           <maml:Description>
@@ -3376,7 +3376,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -3486,7 +3486,7 @@ Tags       : {}</dev:code>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>New-AzureRmDirectPeering</maml:name>
+        <maml:name>New-AzDirectPeering</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>PeeringName</maml:name>
           <maml:Description>
@@ -3600,7 +3600,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -3608,254 +3608,6 @@ Tags       : {}</dev:code>
           <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer</command:parameterValue>
           <dev:type>
             <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>PeeringVlanBandwidthInMbps</maml:name>
-          <maml:Description>
-            <maml:para>The Bandwidth offered at this location in Mbps.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>PeeringVlanDeviceASessionIPv4Prefix</maml:name>
-          <maml:Description>
-            <maml:para>The IPv4 session Prefix.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>PeeringVlanDeviceASessionIPv6Prefix</maml:name>
-          <maml:Description>
-            <maml:para>TheIPv6sessionPrefix.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>PeeringVlanDeviceBSessionIPv4Prefix</maml:name>
-          <maml:Description>
-            <maml:para>The IPv4 session Prefix.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>PeeringVlanDeviceBSessionIPv6Prefix</maml:name>
-          <maml:Description>
-            <maml:para>TheIPv6sessionPrefix.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-      </command:syntaxItem>
-      <command:syntaxItem>
-        <maml:name>New-AzureRmDirectPeering</maml:name>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
-          <maml:name>PeeringName</maml:name>
-          <maml:Description>
-            <maml:para>The unique name of the PSPeering.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
-          <maml:name>ResourceGroupName</maml:name>
-          <maml:Description>
-            <maml:para>The resource group name.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="2" aliases="none">
-          <maml:name>Location</maml:name>
-          <maml:Description>
-            <maml:para>The location of the resource.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="3" aliases="none">
-          <maml:name>PeeringLocation</maml:name>
-          <maml:Description>
-            <maml:para>The Physical Location Different from Azure Region.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="4" aliases="none">
-          <maml:name>PeeringDBFacilityId</maml:name>
-          <maml:Description>
-            <maml:para>The peering facility Id found on https://peeringdb.com</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.UInt32</command:parameterValue>
-          <dev:type>
-            <maml:name>System.UInt32</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="5" aliases="none">
-          <maml:name>Sku</maml:name>
-          <maml:Description>
-            <maml:para>The SKU Tier.</maml:para>
-          </maml:Description>
-          <command:parameterValueGroup>
-            <command:parameterValue required="false" command:variableLength="false">basic_Direct_Free</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">premium_Direct_Metered</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">premium_Direct_Unlimited</command:parameterValue>
-            <command:parameterValue required="false" command:variableLength="false">premium_Direct_Free</command:parameterValue>
-          </command:parameterValueGroup>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="6" aliases="none">
-          <maml:name>MD5AuthenticationKey</maml:name>
-          <maml:Description>
-            <maml:para>The MD5 authentication key for session.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
-          <maml:name>AsJob</maml:name>
-          <maml:Description>
-            <maml:para>Run in the background.</maml:para>
-          </maml:Description>
-          <dev:type>
-            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>False</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>BandwidthInMbps</maml:name>
-          <maml:Description>
-            <maml:para>The Bandwidth offered at this location in Mbps.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
-          <maml:name>DefaultProfile</maml:name>
-          <maml:Description>
-            <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer</command:parameterValue>
-          <dev:type>
-            <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>DefaultVlanBandwidthInMbps</maml:name>
-          <maml:Description>
-            <maml:para>The Bandwidth offered at this location in Mbps.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
-          <dev:type>
-            <maml:name>System.Nullable`1[System.Int32]</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>DefaultVlanDeviceASessionIPv4Prefix</maml:name>
-          <maml:Description>
-            <maml:para>The IPv4 session Prefix.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>DefaultVlanDeviceASessionIPv6Prefix</maml:name>
-          <maml:Description>
-            <maml:para>TheIPv6sessionPrefix.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>DefaultVlanDeviceBSessionIPv4Prefix</maml:name>
-          <maml:Description>
-            <maml:para>The IPv4 session Prefix.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
-            <maml:uri />
-          </dev:type>
-          <dev:defaultValue>None</dev:defaultValue>
-        </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
-          <maml:name>DefaultVlanDeviceBSessionIPv6Prefix</maml:name>
-          <maml:Description>
-            <maml:para>TheIPv6sessionPrefix.</maml:para>
-          </maml:Description>
-          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
-          <dev:type>
-            <maml:name>System.String</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -3922,7 +3674,255 @@ Tags       : {}</dev:code>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>New-AzureRmDirectPeering</maml:name>
+        <maml:name>New-AzDirectPeering</maml:name>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
+          <maml:name>PeeringName</maml:name>
+          <maml:Description>
+            <maml:para>The unique name of the PSPeering.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="1" aliases="none">
+          <maml:name>ResourceGroupName</maml:name>
+          <maml:Description>
+            <maml:para>The resource group name.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="2" aliases="none">
+          <maml:name>Location</maml:name>
+          <maml:Description>
+            <maml:para>The location of the resource.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="3" aliases="none">
+          <maml:name>PeeringLocation</maml:name>
+          <maml:Description>
+            <maml:para>The Physical Location Different from Azure Region.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="4" aliases="none">
+          <maml:name>PeeringDBFacilityId</maml:name>
+          <maml:Description>
+            <maml:para>The peering facility Id found on https://peeringdb.com</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.UInt32</command:parameterValue>
+          <dev:type>
+            <maml:name>System.UInt32</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="5" aliases="none">
+          <maml:name>Sku</maml:name>
+          <maml:Description>
+            <maml:para>The SKU Tier.</maml:para>
+          </maml:Description>
+          <command:parameterValueGroup>
+            <command:parameterValue required="false" command:variableLength="false">basic_Direct_Free</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">premium_Direct_Metered</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">premium_Direct_Unlimited</command:parameterValue>
+            <command:parameterValue required="false" command:variableLength="false">premium_Direct_Free</command:parameterValue>
+          </command:parameterValueGroup>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="6" aliases="none">
+          <maml:name>MD5AuthenticationKey</maml:name>
+          <maml:Description>
+            <maml:para>The MD5 authentication key for session.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>AsJob</maml:name>
+          <maml:Description>
+            <maml:para>Run in the background.</maml:para>
+          </maml:Description>
+          <dev:type>
+            <maml:name>System.Management.Automation.SwitchParameter</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>False</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>BandwidthInMbps</maml:name>
+          <maml:Description>
+            <maml:para>The Bandwidth offered at this location in Mbps.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
+          <maml:name>DefaultProfile</maml:name>
+          <maml:Description>
+            <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer</command:parameterValue>
+          <dev:type>
+            <maml:name>Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>DefaultVlanBandwidthInMbps</maml:name>
+          <maml:Description>
+            <maml:para>The Bandwidth offered at this location in Mbps.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>DefaultVlanDeviceASessionIPv4Prefix</maml:name>
+          <maml:Description>
+            <maml:para>The IPv4 session Prefix.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>DefaultVlanDeviceASessionIPv6Prefix</maml:name>
+          <maml:Description>
+            <maml:para>TheIPv6sessionPrefix.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>DefaultVlanDeviceBSessionIPv4Prefix</maml:name>
+          <maml:Description>
+            <maml:para>The IPv4 session Prefix.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>DefaultVlanDeviceBSessionIPv6Prefix</maml:name>
+          <maml:Description>
+            <maml:para>TheIPv6sessionPrefix.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
+          <maml:name>PeeringVlanBandwidthInMbps</maml:name>
+          <maml:Description>
+            <maml:para>The Bandwidth offered at this location in Mbps.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.Nullable`1[System.Int32]</command:parameterValue>
+          <dev:type>
+            <maml:name>System.Nullable`1[System.Int32]</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>PeeringVlanDeviceASessionIPv4Prefix</maml:name>
+          <maml:Description>
+            <maml:para>The IPv4 session Prefix.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>PeeringVlanDeviceASessionIPv6Prefix</maml:name>
+          <maml:Description>
+            <maml:para>TheIPv6sessionPrefix.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>PeeringVlanDeviceBSessionIPv4Prefix</maml:name>
+          <maml:Description>
+            <maml:para>The IPv4 session Prefix.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+        <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="named" aliases="none">
+          <maml:name>PeeringVlanDeviceBSessionIPv6Prefix</maml:name>
+          <maml:Description>
+            <maml:para>TheIPv6sessionPrefix.</maml:para>
+          </maml:Description>
+          <command:parameterValue required="true" variableLength="false">System.String</command:parameterValue>
+          <dev:type>
+            <maml:name>System.String</maml:name>
+            <maml:uri />
+          </dev:type>
+          <dev:defaultValue>None</dev:defaultValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>New-AzDirectPeering</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>PeeringName</maml:name>
           <maml:Description>
@@ -4018,7 +4018,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -4059,9 +4059,9 @@ Tags       : {}</dev:code>
           <maml:Description>
             <maml:para>{{Fill LegacyPeering Description}}</maml:para>
           </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</command:parameterValue>
           <dev:type>
-            <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</maml:name>
+            <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -4093,7 +4093,7 @@ Tags       : {}</dev:code>
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -4254,9 +4254,9 @@ Tags       : {}</dev:code>
         <maml:Description>
           <maml:para>{{Fill LegacyPeering Description}}</maml:para>
         </maml:Description>
-        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</command:parameterValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -4325,7 +4325,7 @@ Tags       : {}</dev:code>
     <command:inputTypes>
       <command:inputType>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
@@ -4359,7 +4359,7 @@ Tags       : {}</dev:code>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
@@ -4384,19 +4384,19 @@ Tags       : {}</dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>New-AzureRmPeering</command:name>
+      <command:name>New-AzPeering</command:name>
       <command:verb>New</command:verb>
-      <command:noun>AzureRmPeering</command:noun>
+      <command:noun>AzPeering</command:noun>
       <maml:description>
         <maml:para>Creates new Peering object or updates an already existing object.</maml:para>
       </maml:description>
     </command:details>
     <maml:description>
-      <maml:para>The New-AzureRmPeering cmdlet creates a new Peering object.</maml:para>
+      <maml:para>The New-AzPeering cmdlet creates a new Peering object.</maml:para>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>New-AzureRmPeering</maml:name>
+        <maml:name>New-AzPeering</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>AsJob</maml:name>
           <maml:Description>
@@ -4424,7 +4424,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -4541,7 +4541,7 @@ Tags       : {}</dev:code>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>New-AzureRmPeering</maml:name>
+        <maml:name>New-AzPeering</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>AsJob</maml:name>
           <maml:Description>
@@ -4569,7 +4569,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -4710,7 +4710,7 @@ Tags       : {}</dev:code>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>New-AzureRmPeering</maml:name>
+        <maml:name>New-AzPeering</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>AsJob</maml:name>
           <maml:Description>
@@ -4749,7 +4749,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -4892,7 +4892,7 @@ Tags       : {}</dev:code>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>New-AzureRmPeering</maml:name>
+        <maml:name>New-AzPeering</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>AsJob</maml:name>
           <maml:Description>
@@ -4916,7 +4916,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -4987,7 +4987,7 @@ Tags       : {}</dev:code>
         </command:parameter>
       </command:syntaxItem>
       <command:syntaxItem>
-        <maml:name>New-AzureRmPeering</maml:name>
+        <maml:name>New-AzPeering</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>AsJob</maml:name>
           <maml:Description>
@@ -4999,7 +4999,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -5154,7 +5154,7 @@ Tags       : {}</dev:code>
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -5324,7 +5324,7 @@ Tags       : {}</dev:code>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
@@ -5339,10 +5339,10 @@ Tags       : {}</dev:code>
     <command:examples>
       <command:example>
         <maml:title>--------------------- Direct Peering ---------------------</maml:title>
-        <dev:code>PS C:\&gt; New-AzureRmPeering -PeeringName Contoso1_SEA_Peering -ResourceGroupName Contoso1 -PeeringLocation $location[0].Properties.PeeringLocation -SKU premium_Direct_Unlimited -DeviceAName Rapter1 -UseForPeeringService -DeviceAColoId ef4 -DeviceARackId 12c -DeviceAPortId xe0/0/0 -DeviceASessionIPv4Prefix 192.168.10.2/31 -DeviceASessionIPv6Prefix fe00::e024/126 -DeviceBName Rapter2 -DeviceBColoId rd5 -DeviceBRackId 13b -DeviceBPortId xe0/0/1 -DeviceBSessionIPv4Prefix 10.2.24.99/30 -DeviceBSessionIPv6Prefix fe01::34fd/127 -BandwidthInMbps 10000
- Sku        : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSku
+        <dev:code>PS C:\&gt; New-AzPeering -PeeringName Contoso1_SEA_Peering -ResourceGroupName Contoso1 -PeeringLocation $location[0].Properties.PeeringLocation -SKU premium_Direct_Unlimited -DeviceAName Rapter1 -UseForPeeringService -DeviceAColoId ef4 -DeviceARackId 12c -DeviceAPortId xe0/0/0 -DeviceASessionIPv4Prefix 192.168.10.2/31 -DeviceASessionIPv6Prefix fe00::e024/126 -DeviceBName Rapter2 -DeviceBColoId rd5 -DeviceBRackId 13b -DeviceBPortId xe0/0/1 -DeviceBSessionIPv4Prefix 10.2.24.99/30 -DeviceBSessionIPv6Prefix fe01::34fd/127 -BandwidthInMbps 10000
+ Sku        : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSku
 Kind       : Direct
-Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringProperties
+Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringProperties
 Name       : Contoso1_SEA_Peering
 Id         : /subscriptions/XXXXXXX-61c4-436f-XXXX-XXXXXXXXX/resourceGroups/Contoso1/providers/Microsoft.Peering/in
              terconnects/Contoso1_SEA_Peering
@@ -5351,7 +5351,7 @@ Location   :PeeringLocation_Building40
 ETag       :
 Tags       : {}</dev:code>
         <dev:remarks>
-          <maml:para>Location must be a location returned by the command Get-AzureRmPeeringLocation. You can store this as a variable $location = Get-AzureRmPeering</maml:para>
+          <maml:para>Location must be a location returned by the command Get-AzPeeringLocation. You can store this as a variable $location = Get-AzPeering</maml:para>
         </dev:remarks>
       </command:example>
     </command:examples>
@@ -5359,9 +5359,9 @@ Tags       : {}</dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>New-AzureRmPeeringPrefix</command:name>
+      <command:name>New-AzPeeringPrefix</command:name>
       <command:verb>New</command:verb>
-      <command:noun>AzureRmPeeringPrefix</command:noun>
+      <command:noun>AzPeeringPrefix</command:noun>
       <maml:description>
         <maml:para>{{Fill in the Synopsis}}</maml:para>
       </maml:description>
@@ -5371,7 +5371,7 @@ Tags       : {}</dev:code>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>New-AzureRmPeeringPrefix</maml:name>
+        <maml:name>New-AzPeeringPrefix</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="False" position="0" aliases="none">
           <maml:name>PeeringName</maml:name>
           <maml:Description>
@@ -5419,7 +5419,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -5470,7 +5470,7 @@ Tags       : {}</dev:code>
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -5556,7 +5556,7 @@ Tags       : {}</dev:code>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringPrefix</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringPrefix</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
@@ -5581,9 +5581,9 @@ Tags       : {}</dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Remove-AzureRmPeering</command:name>
+      <command:name>Remove-AzPeering</command:name>
       <command:verb>Remove</command:verb>
-      <command:noun>AzureRmPeering</command:noun>
+      <command:noun>AzPeering</command:noun>
       <maml:description>
         <maml:para>{{Fill in the Synopsis}}</maml:para>
       </maml:description>
@@ -5593,7 +5593,7 @@ Tags       : {}</dev:code>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Remove-AzureRmPeering</maml:name>
+        <maml:name>Remove-AzPeering</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>PeeringName</maml:name>
           <maml:Description>
@@ -5617,7 +5617,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -5667,7 +5667,7 @@ Tags       : {}</dev:code>
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -5729,7 +5729,7 @@ Tags       : {}</dev:code>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
@@ -5754,9 +5754,9 @@ Tags       : {}</dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Set-AzureRmPeering</command:name>
+      <command:name>Set-AzPeering</command:name>
       <command:verb>Set</command:verb>
-      <command:noun>AzureRmPeering</command:noun>
+      <command:noun>AzPeering</command:noun>
       <maml:description>
         <maml:para>{{Fill in the Synopsis}}</maml:para>
       </maml:description>
@@ -5766,7 +5766,7 @@ Tags       : {}</dev:code>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Set-AzureRmPeering</maml:name>
+        <maml:name>Set-AzPeering</maml:name>
         <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="none">
           <maml:name>AsJob</maml:name>
           <maml:Description>
@@ -5778,7 +5778,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -5795,9 +5795,9 @@ Tags       : {}</dev:code>
           <maml:Description>
             <maml:para>{{Fill Peering Description}}</maml:para>
           </maml:Description>
-          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</command:parameterValue>
+          <command:parameterValue required="true" variableLength="false">Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</command:parameterValue>
           <dev:type>
-            <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</maml:name>
+            <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</maml:name>
             <maml:uri />
           </dev:type>
           <dev:defaultValue>None</dev:defaultValue>
@@ -5817,7 +5817,7 @@ Tags       : {}</dev:code>
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -5834,9 +5834,9 @@ Tags       : {}</dev:code>
         <maml:Description>
           <maml:para>{{Fill Peering Description}}</maml:para>
         </maml:Description>
-        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</command:parameterValue>
+        <command:parameterValue required="true" variableLength="false">Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</command:parameterValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</maml:name>
           <maml:uri />
         </dev:type>
         <dev:defaultValue>None</dev:defaultValue>
@@ -5845,7 +5845,7 @@ Tags       : {}</dev:code>
     <command:inputTypes>
       <command:inputType>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
@@ -5855,7 +5855,7 @@ Tags       : {}</dev:code>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>
@@ -5880,9 +5880,9 @@ Tags       : {}</dev:code>
   </command:command>
   <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:MSHelp="http://msdn.microsoft.com/mshelp">
     <command:details>
-      <command:name>Set-AzureRmPeeringSubscriber</command:name>
+      <command:name>Set-AzPeeringSubscriber</command:name>
       <command:verb>Set</command:verb>
-      <command:noun>AzureRmPeeringSubscriber</command:noun>
+      <command:noun>AzPeeringSubscriber</command:noun>
       <maml:description>
         <maml:para>{{Fill in the Synopsis}}</maml:para>
       </maml:description>
@@ -5892,7 +5892,7 @@ Tags       : {}</dev:code>
     </maml:description>
     <command:syntax>
       <command:syntaxItem>
-        <maml:name>Set-AzureRmPeeringSubscriber</maml:name>
+        <maml:name>Set-AzPeeringSubscriber</maml:name>
         <command:parameter required="true" variableLength="true" globbing="false" pipelineInput="True (ByPropertyName)" position="0" aliases="none">
           <maml:name>PeeringName</maml:name>
           <maml:Description>
@@ -5916,7 +5916,7 @@ Tags       : {}</dev:code>
           </dev:type>
           <dev:defaultValue>False</dev:defaultValue>
         </command:parameter>
-        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+        <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
           <maml:name>DefaultProfile</maml:name>
           <maml:Description>
             <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -5991,7 +5991,7 @@ Tags       : {}</dev:code>
         </dev:type>
         <dev:defaultValue>False</dev:defaultValue>
       </command:parameter>
-      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzureRmContext, AzureCredential">
+      <command:parameter required="false" variableLength="true" globbing="false" pipelineInput="False" position="named" aliases="AzContext, AzureCredential">
         <maml:name>DefaultProfile</maml:name>
         <maml:Description>
           <maml:para>The credentials, account, tenant, and subscription used for communication with Azure.</maml:para>
@@ -6065,7 +6065,7 @@ Tags       : {}</dev:code>
     <command:returnValues>
       <command:returnValue>
         <dev:type>
-          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</maml:name>
+          <maml:name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</maml:name>
         </dev:type>
         <maml:description>
           <maml:para></maml:para>

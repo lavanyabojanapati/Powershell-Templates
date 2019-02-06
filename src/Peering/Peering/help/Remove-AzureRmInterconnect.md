@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Remove-AzureRmPeering
+# Remove-AzPeering
 
 ## SYNOPSIS
 Remove is not Supported at this time.
@@ -13,7 +13,7 @@ Remove is not Supported at this time.
 ## SYNTAX
 
 ```
-Remove-AzureRmPeering [-Force] [-PeeringName] <String> -ResourceGroupName <String> [-AsJob]
+Remove-AzPeering [-Force] [-PeeringName] <String> -ResourceGroupName <String> [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -52,7 +52,7 @@ The credentials, account, tenant, and subscription used for communication with A
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: AzContext, AzureCredential
 
 Required: False
 Position: Named
@@ -115,7 +115,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering
+### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering
 
 ## NOTES
 

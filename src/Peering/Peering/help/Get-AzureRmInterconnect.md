@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-AzureRmPeering
+# Get-AzPeering
 
 ## SYNOPSIS
 Get ARM Peerings for a subscription.
@@ -14,43 +14,43 @@ Get ARM Peerings for a subscription.
 
 ### BySubscription (Default)
 ```
-Get-AzureRmPeering [-ResourceGroupName <String>] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+Get-AzPeering [-ResourceGroupName <String>] [-AsJob] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
 ### PeeringByResourceAndName
 ```
-Get-AzureRmPeering -PeeringName <String> -ResourceGroupName <String> [-AsJob]
+Get-AzPeering -PeeringName <String> -ResourceGroupName <String> [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### PeeringByResourceIPPrefixes
 ```
-Get-AzureRmPeering -PeeringName <String> -ResourceGroupName <String> [-Prefixes] [-AsJob]
+Get-AzPeering -PeeringName <String> -ResourceGroupName <String> [-Prefixes] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### PeeringByResource
 ```
-Get-AzureRmPeering -ResourceGroupName <String> [-Kind <String>] [-AsJob]
+Get-AzPeering -ResourceGroupName <String> [-Kind <String>] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### PeeringByKind
 ```
-Get-AzureRmPeering -Kind <String> [-AsJob] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Get-AzPeering -Kind <String> [-AsJob] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-AzureRmPeering** cmdlet gets the Peerings of the subscription, resource group, or specific Peering name.
+The **Get-AzPeering** cmdlet gets the Peerings of the subscription, resource group, or specific Peering name.
 
 ## EXAMPLES
 
 ### Example 1: Get Peering for Subscriptions
 ```powershell
-PS C:\> Get-AzureRmPeering
+PS C:\> Get-AzPeering
 Name                      : ContosoDirectLAX
-Sku                       : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSku
+Sku                       : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSku
 Kind                      : Direct
 Id                        : /subscriptions/XXXX/resourceGroups/Contoso0/providers/Microsoft.Peering/Peerings/Contoso0Peeringbldg41
 Type                      : Microsoft.Peering/Peerings
@@ -80,10 +80,10 @@ Tags                      : {}
 Gets Peering for subscription.
 ### Example 2: Get Peering for Resource Group
 ```powershell
-PS C:\> Get-AzureRmPeering -Kind Direct -ResourceGroupName Contoso1
-Sku        : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSku
+PS C:\> Get-AzPeering -Kind Direct -ResourceGroupName Contoso1
+Sku        : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSku
 Kind       : Direct
-Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringProperties
+Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringProperties
 Name       : Contoso1Peeringbldg40
 Id         : /subscriptions/XXXX/resourceGroups/Contoso1/providers/Microsoft.Peering/in
              terconnects/Contoso1Peeringbldg40
@@ -97,10 +97,10 @@ Gets Peering by Resource Group name.
 
 ### Example 3: Get Peering details
 ```powershell
-PS C:\> Get-AzureRmPeering -Name MyTinyPeering -ResourceGroupName Contoso1
-Sku        : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSku
+PS C:\> Get-AzPeering -Name MyTinyPeering -ResourceGroupName Contoso1
+Sku        : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSku
 Kind       : Direct
-Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringProperties
+Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringProperties
 Name       : MyTinyPeering
 Id         : /subscriptions/XXXX/resourceGroups/Contoso1/providers/Microsoft.Peering/in
              terconnects/MyTinyPeering
@@ -135,7 +135,7 @@ The credentials, account, tenant, and subscription used for communication with A
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: AzContext, AzureCredential
 
 Required: False
 Position: Named
@@ -241,7 +241,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering
+### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering
 
 ## NOTES
 

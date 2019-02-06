@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-AzureRmPeeringPrefix
+# Get-AzPeeringPrefix
 
 ## SYNOPSIS
 {{Fill in the Synopsis}}
@@ -14,13 +14,13 @@ schema: 2.0.0
 
 ### ParameterSetNamePrefixByPrefixName (Default)
 ```
-Get-AzureRmPeeringPrefix -PeeringName <String> -ResourceGroupName <String> -PrefixName <String>
+Get-AzPeeringPrefix -PeeringName <String> -ResourceGroupName <String> -PrefixName <String>
  [-AsJob] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### ParameterSetNamePrefixByPeering
 ```
-Get-AzureRmPeeringPrefix -PeeringName <String> -ResourceGroupName <String> [-AsJob]
+Get-AzPeeringPrefix -PeeringName <String> -ResourceGroupName <String> [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
@@ -59,7 +59,7 @@ The credentials, account, tenant, and subscription used for communication with A
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: AzContext, AzureCredential
 
 Required: False
 Position: Named
@@ -122,7 +122,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringPrefix
+### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringPrefix
 
 ## NOTES
 

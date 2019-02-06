@@ -12,21 +12,21 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
-namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
+namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Peering
 {
-    using System.Collections.Generic;
     using System.Linq;
     using System.Management.Automation;
 
-    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models;
     using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
     using Microsoft.Azure.Management.Peering;
+    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common;
+    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
 
     /// <inheritdoc />
     /// <summary>
-    ///     The Get AzureRm Peering Legacy peering.
+    ///     The Get Az Peering Legacy peering.
     /// </summary>
-    [Cmdlet(VerbsCommon.Get, "AzureRmPeeringLegacyPeering")]
+    [Cmdlet(VerbsCommon.Get, "AzPeeringLegacyPeering")]
     [OutputType(typeof(PSPeering))]
     public class GetAzurePeeringLegacyPeeringCommand : PeeringBaseCmdlet
     {

@@ -101,22 +101,22 @@ NestedModules = @('.\Microsoft.Azure.PowerShell.Cmdlets.Peering.dll')
 FunctionsToExport = @()
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = 'Get-AzureRmPeering',
-			#'New-AzureRmPeering',
-			'Get-AzureRmPeeringLocation',
-			'Get-AzureRmPeeringPartner',
-			'Get-AzureRmPeeringLegacyPeering',
-			#'Get-AzureRmPeeringBandwidthOffer',
-			'Get-AzureRmPeeringSubscriber',
-			'Set-AzureRmPeeringSubscriber',
-			'Remove-AzureRmPeering',
-			'New-AzureRmPeeringService',
-			'New-AzureRmDirectPeering',
-			'New-AzureRmExchangePeering',
-			'Set-AzureRmPeering',
-			'Get-AzureRmPeeringPrefix',
-			'New-AzureRmPeeringPrefix', 
-			'Get-AzureRmPeeringServiceProvider'
+CmdletsToExport = 'Get-AzPeering',
+			#'New-AzPeering',
+			'Get-AzPeeringLocation',
+			'Get-AzPeeringPartner',
+			'Get-AzPeeringLegacyPeering',
+			#'Get-AzPeeringBandwidthOffer',
+			'Get-AzPeeringSubscriber',
+			'Set-AzPeeringSubscriber',
+			'Remove-AzPeering',
+			'New-AzPeeringService',
+			'New-AzDirectPeering',
+			'New-AzExchangePeering',
+			'Set-AzPeering',
+			'Get-AzPeeringPrefix',
+			'New-AzPeeringPrefix', 
+			'Get-AzPeeringServiceProvider'
 
 # Variables to export from this module
 # VariablesToExport = @()

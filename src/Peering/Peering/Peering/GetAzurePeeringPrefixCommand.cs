@@ -12,17 +12,17 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
-namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
+namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Peering
 {
     using System;
     using System.Linq;
     using System.Management.Automation;
 
-    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common;
-    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models;
     using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
     using Microsoft.Azure.Management.Peering;
     using Microsoft.Azure.Management.Peering.Models;
+    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common;
+    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
 
     /// <inheritdoc />
     /// <summary>
@@ -30,7 +30,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
     /// </summary>
     [Cmdlet(
         VerbsCommon.Get,
-        "AzureRmPeeringPrefix",
+        "AzPeeringPrefix",
         DefaultParameterSetName = Constants.ParameterSetNamePrefixByPeering)]
     [OutputType(typeof(PSPeeringPrefix))]
     public class GetAzurePeeringPrefixCommand : PeeringBaseCmdlet

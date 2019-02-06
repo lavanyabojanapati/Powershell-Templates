@@ -7,6 +7,10 @@
   <Import Project="$(MSBuildThisFileDirectory)..\..\Az.props" />
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="5.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\..\azure-sdk-for-net-pr\src\SDKs\Peering\Management.Peering\Microsoft.Azure.Management.Peering.csproj" />
   </ItemGroup>
 

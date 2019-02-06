@@ -4,7 +4,7 @@
 // regenerated.
 // </auto-generated>
 
-namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models
+namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Models
 {
     using Newtonsoft.Json;
     using System.Collections;

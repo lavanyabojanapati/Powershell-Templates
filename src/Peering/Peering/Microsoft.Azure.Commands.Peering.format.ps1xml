@@ -7,9 +7,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
 <Configuration>
   <ViewDefinitions>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSubscriberListResult</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSubscriberListResult</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSubscriberListResult</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSubscriberListResult</TypeName>
       </ViewSelectedBy>
       <TableControl>
         <TableHeaders>
@@ -27,9 +27,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </TableControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSubscriber</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSubscriber</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSubscriber</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSubscriber</TypeName>
       </ViewSelectedBy>
       <ListControl>
         <ListEntries>
@@ -65,9 +65,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </ListControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringPrefixListResult</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringPrefixListResult</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringPrefixListResult</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringPrefixListResult</TypeName>
       </ViewSelectedBy>
       <TableControl>
         <TableHeaders>
@@ -85,9 +85,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </TableControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringPrefix</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringPrefix</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringPrefix</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringPrefix</TypeName>
       </ViewSelectedBy>
       <ListControl>
         <ListEntries>
@@ -119,9 +119,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </ListControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSku</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSku</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSku</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSku</TypeName>
       </ViewSelectedBy>
       <TableControl>
         <TableHeaders>
@@ -157,9 +157,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </TableControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSessionConfiguration</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSessionConfiguration</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSessionConfiguration</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSessionConfiguration</TypeName>
       </ViewSelectedBy>
       <TableControl>
         <TableHeaders>
@@ -183,9 +183,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </TableControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringPropertiesDirect</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringPropertiesDirect</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringPropertiesDirect</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringPropertiesDirect</TypeName>
       </ViewSelectedBy>
       <ListControl>
         <ListEntries>
@@ -275,9 +275,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </ListControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringPropertiesDirectVlan</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringPropertiesDirectVlan</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringPropertiesDirectVlan</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringPropertiesDirectVlan</TypeName>
       </ViewSelectedBy>
       <ListControl>
         <ListEntries>
@@ -321,9 +321,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </ListControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringPartner</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringPartner</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringPartner</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringPartner</TypeName>
       </ViewSelectedBy>
       <ListControl>
         <ListEntries>
@@ -347,9 +347,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </ListControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringPropertiesCdn</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringPropertiesCdn</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringPropertiesCdn</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringPropertiesCdn</TypeName>
       </ViewSelectedBy>
       <TableControl>
         <TableHeaders>
@@ -373,9 +373,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </TableControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringPropertiesCarrier</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringPropertiesCarrier</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringPropertiesCarrier</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringPropertiesCarrier</TypeName>
       </ViewSelectedBy>
       <ListControl>
         <ListEntries>
@@ -395,9 +395,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </ListControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringLocationListResult</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringLocationListResult</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringLocationListResult</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringLocationListResult</TypeName>
       </ViewSelectedBy>
       <TableControl>
         <TableHeaders>
@@ -415,9 +415,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </TableControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringLocation</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringLocation</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringLocation</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringLocation</TypeName>
       </ViewSelectedBy>
       <ListControl>
         <ListEntries>
@@ -511,9 +511,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </ListControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringListResult</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringListResult</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringListResult</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringListResult</TypeName>
       </ViewSelectedBy>
       <TableControl>
         <TableHeaders>
@@ -531,9 +531,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </TableControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringServiceListResult</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringServiceListResult</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringServiceListResult</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringServiceListResult</TypeName>
       </ViewSelectedBy>
       <TableControl>
         <TableHeaders>
@@ -551,9 +551,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </TableControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringService</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringService</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringService</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringService</TypeName>
       </ViewSelectedBy>
       <ListControl>
         <ListEntries>
@@ -573,9 +573,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </ListControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringBandwidthOffer</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringBandwidthOffer</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringBandwidthOffer</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringBandwidthOffer</TypeName>
       </ViewSelectedBy>
       <TableControl>
         <TableHeaders>
@@ -599,9 +599,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </TableControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering</TypeName>
       </ViewSelectedBy>
       <ListControl>
         <ListEntries>
@@ -855,9 +855,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </ListControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSArmTags</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSArmTags</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSArmTags</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSArmTags</TypeName>
       </ViewSelectedBy>
       <TableControl>
         <TableHeaders>
@@ -875,9 +875,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </TableControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSArmOperationListResult</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSArmOperationListResult</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSArmOperationListResult</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSArmOperationListResult</TypeName>
       </ViewSelectedBy>
       <TableControl>
         <TableHeaders>
@@ -895,9 +895,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </TableControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSArmOperationDisplayInfo</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSArmOperationDisplayInfo</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSArmOperationDisplayInfo</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSArmOperationDisplayInfo</TypeName>
       </ViewSelectedBy>
       <TableControl>
         <TableHeaders>
@@ -933,9 +933,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </TableControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSArmOperation</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSArmOperation</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSArmOperation</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSArmOperation</TypeName>
       </ViewSelectedBy>
       <TableControl>
         <TableHeaders>
@@ -959,9 +959,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </TableControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSArmErrorDetail</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSArmErrorDetail</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSArmErrorDetail</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSArmErrorDetail</TypeName>
       </ViewSelectedBy>
       <TableControl>
         <TableHeaders>
@@ -991,9 +991,9 @@ Changes may cause incorrect behavior and will be lost if the code is regenerated
       </TableControl>
     </View>
     <View>
-      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSArmError</Name>
+      <Name>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSArmError</Name>
       <ViewSelectedBy>
-        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSArmError</TypeName>
+        <TypeName>Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSArmError</TypeName>
       </ViewSelectedBy>
       <TableControl>
         <TableHeaders>

@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-AzureRmPeeringSubscriber
+# Get-AzPeeringSubscriber
 
 ## SYNOPSIS
 Get Peering subscribers of the subscription 
@@ -14,24 +14,24 @@ Get Peering subscribers of the subscription
 
 ### List (Default)
 ```
-Get-AzureRmPeeringSubscriber -PeeringName <String> -ResourceGroupName <String> [-AsJob]
+Get-AzPeeringSubscriber -PeeringName <String> -ResourceGroupName <String> [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### single
 ```
-Get-AzureRmPeeringSubscriber -PeeringName <String> -ResourceGroupName <String>
+Get-AzPeeringSubscriber -PeeringName <String> -ResourceGroupName <String>
  [-SubscriberName <String>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-AzureRmPeeringSubscriber** cmdlet gets subscribers of the subscription
+The **Get-AzPeeringSubscriber** cmdlet gets subscribers of the subscription
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzureRmPeeringSubscriber -ResourceGroupeName rg0 -PeeringName MyTinyNetwork
+PS C:\> Get-AzPeeringSubscriber -ResourceGroupeName rg0 -PeeringName MyTinyNetwork
 ```
 
 {{ Add example description here }}
@@ -59,7 +59,7 @@ The credentials, account, tenant, and subscription used for communication with A
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: AzContext, AzureCredential
 
 Required: False
 Position: Named
@@ -123,7 +123,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSubscriber
+### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSubscriber
 
 ## NOTES
 

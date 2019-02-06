@@ -1,11 +1,11 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.dll-Help.xml
-Module Name: AzureRm.Peering
+Module Name: Az.Peering
 online version:
 schema: 2.0.0
 ---
 
-# Get-AzureRmPeeringLegacyDirectPeering
+# Get-AzPeeringLegacyDirectPeering
 
 ## SYNOPSIS
 Get a list of legact peerings with Microsoft that can be converted to Direct Peering Resources.
@@ -13,25 +13,25 @@ Get a list of legact peerings with Microsoft that can be converted to Direct Pee
 ## SYNTAX
 
 ```
-Get-AzureRmPeeringLegacyDirectPeering [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+Get-AzPeeringLegacyDirectPeering [-AsJob] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Use **Get-AzureRmPeeringLegacyDirectPeering** cmdlet to convert legacy objects to new Direct Peering objects. 
+Use **Get-AzPeeringLegacyDirectPeering** cmdlet to convert legacy objects to new Direct Peering objects. 
 
 ## EXAMPLES
 
 ### Example 1:List
 ```powershell
-PS C:\> Get-AzureRmPeeringLegacyDirectPeering
+PS C:\> Get-AzPeeringLegacyDirectPeering
 ```
 
 Lists Legacy Direct Peering Objects
 
 ### Example 2:
 ```powershell
-PS C:\> Get-AzureRmPeeringLegacyDirectPeering | foreach {New-AzureRmPeering -Name $_.Properties.PeeringLocation.Insert(0,"Peering") -ResourceGroupName rg0 -DeviceLocation $_.Properties.PeeringLocation -SkuName $_.Sku.Name -Tier $_.Sku.Tier -Family $_.Sku.Family -Size $_.Sku.Size -DeviceName Rapter1,Rapter2 -coloId 1ed,2ed -rackId a,b -portId 1,2,3,4,5 -SessionIPv4Prefix $_.Properties.Direct.ADeviceSession.SessionIPv4Prefix,$_.Properties.Direct.BDeviceSession.SessionIPv4Prefix -SessionIPv6Prefix $_.Properties.Direct.ADeviceSession.SessionIPv6Prefix,$_.Properties.Direct.BDeviceSession.SessionIPv6Prefix -Bandwidth $_.Properties.Direct.BandwidthInGpbs -AsJob -Force}
+PS C:\> Get-AzPeeringLegacyDirectPeering | foreach {New-AzPeering -Name $_.Properties.PeeringLocation.Insert(0,"Peering") -ResourceGroupName rg0 -DeviceLocation $_.Properties.PeeringLocation -SkuName $_.Sku.Name -Tier $_.Sku.Tier -Family $_.Sku.Family -Size $_.Sku.Size -DeviceName Rapter1,Rapter2 -coloId 1ed,2ed -rackId a,b -portId 1,2,3,4,5 -SessionIPv4Prefix $_.Properties.Direct.ADeviceSession.SessionIPv4Prefix,$_.Properties.Direct.BDeviceSession.SessionIPv4Prefix -SessionIPv6Prefix $_.Properties.Direct.ADeviceSession.SessionIPv6Prefix,$_.Properties.Direct.BDeviceSession.SessionIPv6Prefix -Bandwidth $_.Properties.Direct.BandwidthInGpbs -AsJob -Force}
 ```
 
 Converts all existing Legacy Direct Peerings into Peering objects. 
@@ -59,7 +59,7 @@ The credentials, account, tenant, and subscription used for communication with A
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: AzContext, AzureCredential
 
 Required: False
 Position: Named
@@ -77,7 +77,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering
+### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering
 
 ## NOTES
 

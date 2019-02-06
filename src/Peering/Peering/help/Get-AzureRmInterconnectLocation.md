@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# Get-AzureRmPeeringLocation
+# Get-AzPeeringLocation
 
 ## SYNOPSIS
 Get locations of Peering sites 
@@ -13,20 +13,20 @@ Get locations of Peering sites
 ## SYNTAX
 
 ```
-Get-AzureRmPeeringLocation [-Kind] <String> [-AsJob] [-DefaultProfile <IAzureContextContainer>]
+Get-AzPeeringLocation [-Kind] <String> [-AsJob] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-AzureRmPeeringLocation** cmdlet gets locations of Peerings
+The **Get-AzPeeringLocation** cmdlet gets locations of Peerings
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzureRmPeeringLocation
+PS C:\> Get-AzPeeringLocation
 
-Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringLocationProperties
+Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringLocationProperties
 Name       : PeeringLocation_Building40
 Id         :
 Type       : Microsoft.Peering/PeeringLocations
@@ -34,7 +34,7 @@ Location   :
 ETag       :
 Tags       : {}
 
-Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringLocationProperties
+Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringLocationProperties
 Name       : PeeringLocation_Building41
 Id         :
 Type       : Microsoft.Peering/PeeringLocations
@@ -43,7 +43,7 @@ ETag       :
 Tags       : {}
 
 
-Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringLocationProperties
+Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringLocationProperties
 Name       : PeeringLocation_Building42
 Id         :
 Type       : Microsoft.Peering/PeeringLocations
@@ -75,7 +75,7 @@ The credentials, account, tenant, and subscription used for communication with A
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: AzContext, AzureCredential
 
 Required: False
 Position: Named
@@ -109,7 +109,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringLocation
+### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringLocation
 
 ## NOTES
 

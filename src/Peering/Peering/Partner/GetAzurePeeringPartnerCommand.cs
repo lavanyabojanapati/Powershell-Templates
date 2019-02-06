@@ -17,14 +17,14 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
     using System.Collections.Generic;
     using System.Management.Automation;
 
-    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models;
+    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
     using Microsoft.Azure.Management.Peering;
 
     /// <inheritdoc />
     /// <summary>
-    ///     Gets the AzureRm Peering Carriers.
+    ///     Gets the Az Peering Carriers.
     /// </summary>
-    [Cmdlet(VerbsCommon.Get, "AzureRmPeeringPartner")]
+    [Cmdlet(VerbsCommon.Get, "AzPeeringPartner")]
     [OutputType(typeof(PSPeeringPartner))]
     public class GetAzurePeeringServiceCommand : PeeringBaseCmdlet
     {

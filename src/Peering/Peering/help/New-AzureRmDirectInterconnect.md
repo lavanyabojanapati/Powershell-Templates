@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# New-AzureRmDirectPeering
+# New-AzDirectPeering
 
 ## SYNOPSIS
 Create or convert to a new Direct Peering resource in Azure.
@@ -14,7 +14,7 @@ Create or convert to a new Direct Peering resource in Azure.
 
 ### DeviceAWithDefaultVlan (Default)
 ```
-New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
+New-AzDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
  [-PeeringLocation] <String> [-PeeringDBFacilityId] <UInt32> [-Sku] <String>
  [[-MD5AuthenticationKey] <String>] -DefaultVlanDeviceASessionIPv4Prefix <String>
  [-DefaultVlanDeviceASessionIPv6Prefix <String>] -DefaultVlanBandwidthInMbps <Int32> -BandwidthInMbps <Int32>
@@ -23,7 +23,7 @@ New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [
 
 ### ParameterSetNameConvertLegacyPeering
 ```
-New-AzureRmDirectPeering -LegacyPeering <PSPeering> [-PeeringName] <String>
+New-AzDirectPeering -LegacyPeering <PSPeering> [-PeeringName] <String>
  [-ResourceGroupName] <String> [-Location] <String> [-PeeringLocation] <String>
  [-PeeringDBFacilityId] <UInt32> [[-MD5AuthenticationKey] <String>] [-DefaultVlanBandwidthInMbps <Int32>]
  [-PeeringVlanBandwidthInMbps <Int32>] [-BandwidthInMbps <Int32>] [-AsJob]
@@ -32,7 +32,7 @@ New-AzureRmDirectPeering -LegacyPeering <PSPeering> [-PeeringName] <String>
 
 ### DeviceBWithDefaultVlan
 ```
-New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
+New-AzDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
  [-PeeringLocation] <String> [-PeeringDBFacilityId] <UInt32> [-Sku] <String>
  [[-MD5AuthenticationKey] <String>] -DefaultVlanDeviceBSessionIPv4Prefix <String>
  [-DefaultVlanDeviceBSessionIPv6Prefix <String>] -DefaultVlanBandwidthInMbps <Int32> -BandwidthInMbps <Int32>
@@ -41,7 +41,7 @@ New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [
 
 ### DeviceAWithPeeringVlan
 ```
-New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
+New-AzDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
  [-PeeringLocation] <String> [-PeeringDBFacilityId] <UInt32> [-Sku] <String>
  [[-MD5AuthenticationKey] <String>] -PeeringVlanDeviceASessionIPv4Prefix <String>
  [-PeeringVlanDeviceASessionIPv6Prefix <String>] -PeeringVlanBandwidthInMbps <Int32>
@@ -50,7 +50,7 @@ New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [
 
 ### DeviceBWithPeeringVlan
 ```
-New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
+New-AzDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
  [-PeeringLocation] <String> [-PeeringDBFacilityId] <UInt32> [-Sku] <String>
  [[-MD5AuthenticationKey] <String>] -PeeringVlanDeviceBSessionIPv4Prefix <String>
  [-PeeringVlanDeviceBSessionIPv6Prefix <String>] -PeeringVlanBandwidthInMbps <Int32>
@@ -59,7 +59,7 @@ New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [
 
 ### DeviceAWithDefaultAndPeeringVlan
 ```
-New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
+New-AzDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
  [-PeeringLocation] <String> [-PeeringDBFacilityId] <UInt32> [-Sku] <String>
  [[-MD5AuthenticationKey] <String>] -DefaultVlanDeviceASessionIPv4Prefix <String>
  [-DefaultVlanDeviceASessionIPv6Prefix <String>] -DefaultVlanBandwidthInMbps <Int32>
@@ -70,7 +70,7 @@ New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [
 
 ### DeviceBWithDefaultAndPeeringVlan
 ```
-New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
+New-AzDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
  [-PeeringLocation] <String> [-PeeringDBFacilityId] <UInt32> [-Sku] <String>
  [[-MD5AuthenticationKey] <String>] -DefaultVlanDeviceBSessionIPv4Prefix <String>
  [-DefaultVlanDeviceBSessionIPv6Prefix <String>] -DefaultVlanBandwidthInMbps <Int32>
@@ -81,7 +81,7 @@ New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [
 
 ### DeviceAAndBWithDefaultVlan
 ```
-New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
+New-AzDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
  [-PeeringLocation] <String> [-PeeringDBFacilityId] <UInt32> [-Sku] <String>
  [[-MD5AuthenticationKey] <String>] -DefaultVlanDeviceASessionIPv4Prefix <String>
  [-DefaultVlanDeviceASessionIPv6Prefix <String>] -DefaultVlanDeviceBSessionIPv4Prefix <String>
@@ -91,7 +91,7 @@ New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [
 
 ### DeviceAAndBWithPeeringVlan
 ```
-New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
+New-AzDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
  [-PeeringLocation] <String> [-PeeringDBFacilityId] <UInt32> [-Sku] <String>
  [[-MD5AuthenticationKey] <String>] -PeeringVlanDeviceASessionIPv4Prefix <String>
  -PeeringVlanDeviceBSessionIPv4Prefix <String> -PeeringVlanBandwidthInMbps <Int32>
@@ -100,7 +100,7 @@ New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [
 
 ### DeviceAAndBWithDefaultAndPeeringVlan
 ```
-New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
+New-AzDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
  [-PeeringLocation] <String> [-PeeringDBFacilityId] <UInt32> [-Sku] <String>
  [[-MD5AuthenticationKey] <String>] -DefaultVlanDeviceASessionIPv4Prefix <String>
  [-DefaultVlanDeviceASessionIPv6Prefix <String>] -DefaultVlanDeviceBSessionIPv4Prefix <String>
@@ -112,7 +112,7 @@ New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [
 
 ### DeviceAAndBWithPeeringVlanV6
 ```
-New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
+New-AzDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
  [-PeeringLocation] <String> [-PeeringDBFacilityId] <UInt32> [-Sku] <String>
  [[-MD5AuthenticationKey] <String>] -PeeringVlanDeviceASessionIPv4Prefix <String>
  -PeeringVlanDeviceASessionIPv6Prefix <String> -PeeringVlanDeviceBSessionIPv4Prefix <String>
@@ -122,7 +122,7 @@ New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [
 
 ### DeviceAAndBWithDefaultAndPeeringVlanV6
 ```
-New-AzureRmDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
+New-AzDirectPeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
  [-PeeringLocation] <String> [-PeeringDBFacilityId] <UInt32> [-Sku] <String>
  [[-MD5AuthenticationKey] <String>] -DefaultVlanDeviceASessionIPv4Prefix <String>
  [-DefaultVlanDeviceASessionIPv6Prefix <String>] -DefaultVlanDeviceBSessionIPv4Prefix <String>
@@ -140,9 +140,9 @@ Create or convert to new Direct Peering Resource in Azure.
 
 ### Example 1
 ```powershell
-PS C:\> New-AzureRmDirectPeering -PeeringName ContosoDirectLAX -ResourceGroupName test -Location westus -PeeringLocation "Los Angeles" -PeeringDBFacilityId 8 -Sku basic_Direct_Free -MD5AuthenticationKey SomeHashContoso -DefaultVlanDeviceASessionIPv4Prefix 10.0.0.3/31 -DefaultVlanBandwidthInMbps 10000 -BandwidthInMbps 10000
+PS C:\> New-AzDirectPeering -PeeringName ContosoDirectLAX -ResourceGroupName test -Location westus -PeeringLocation "Los Angeles" -PeeringDBFacilityId 8 -Sku basic_Direct_Free -MD5AuthenticationKey SomeHashContoso -DefaultVlanDeviceASessionIPv4Prefix 10.0.0.3/31 -DefaultVlanBandwidthInMbps 10000 -BandwidthInMbps 10000
 ```
-Creates a new Direct Peering at Los Angeles. See [Get-AzureRmPeeringLocation](Get-AzureRmPeeringLocation.md) for more information. 
+Creates a new Direct Peering at Los Angeles. See [Get-AzPeeringLocation](Get-AzPeeringLocation.md) for more information. 
 ## PARAMETERS
 
 ### -AsJob
@@ -193,7 +193,7 @@ The credentials, account, tenant, and subscription used for communication with A
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: AzContext, AzureCredential
 
 Required: False
 Position: Named
@@ -458,7 +458,7 @@ Accept wildcard characters: False
 {{Fill LegacyPeering Description}}
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering
+Type: Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering
 Parameter Sets: ParameterSetNameConvertLegacyPeering
 Aliases:
 
@@ -598,7 +598,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering
+### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering
 
 ### System.String
 
@@ -608,7 +608,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering
+### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering
 
 ## NOTES
 

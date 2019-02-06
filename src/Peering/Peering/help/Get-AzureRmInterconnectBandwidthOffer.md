@@ -1,11 +1,11 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.dll-Help.xml
-Module Name: AzureRm.Peering
+Module Name: Az.Peering
 online version:
 schema: 2.0.0
 ---
 
-# Get-AzureRmPeeringBandwidthOffer
+# Get-AzPeeringBandwidthOffer
 
 ## SYNOPSIS
 Gets Bandwidth offers avaliable for a subscription. Applies to both Direct and Partner Peering.
@@ -14,24 +14,24 @@ Gets Bandwidth offers avaliable for a subscription. Applies to both Direct and P
 
 ### List (Default)
 ```
-Get-AzureRmPeeringBandwidthOffer -ResourceGroupName <String> -PeeringName <String>
+Get-AzPeeringBandwidthOffer -ResourceGroupName <String> -PeeringName <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### single
 ```
-Get-AzureRmPeeringBandwidthOffer -ResourceGroupName <String> -PeeringName <String>
+Get-AzPeeringBandwidthOffer -ResourceGroupName <String> -PeeringName <String>
  -OfferName <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Get-AzureRmPeeringBandwidthOffer** cmdlet gets bandwidth offers for the subscription.
+The **Get-AzPeeringBandwidthOffer** cmdlet gets bandwidth offers for the subscription.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> Get-AzureRmPeeringBandwidthOffer -ResourceGroupName rg0 -PeeringName MyPeering 
+PS C:\> Get-AzPeeringBandwidthOffer -ResourceGroupName rg0 -PeeringName MyPeering 
 list of offers
 ```
 
@@ -43,7 +43,7 @@ The credentials, account, tenant, and subscription used for communication with A
 ```yaml
 Type: IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: AzContext, AzureCredential
 
 Required: False
 Position: Named
@@ -107,7 +107,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringBandwidthOffer
+### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringBandwidthOffer
 
 ## NOTES
 

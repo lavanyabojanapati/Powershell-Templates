@@ -5,7 +5,7 @@ online version:
 schema: 2.0.0
 ---
 
-# New-AzureRmExchangePeering
+# New-AzExchangePeering
 
 ## SYNOPSIS
 Create a new Exchange Peering Resource in Azure Resource Manager.
@@ -14,12 +14,12 @@ Create a new Exchange Peering Resource in Azure Resource Manager.
 
 ### DeviceAWithDefaultVlan (Default)
 ```
-New-AzureRmExchangePeering [-AsJob] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+New-AzExchangePeering [-AsJob] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### ConvertLegacyPeering
 ```
-New-AzureRmExchangePeering -LegacyPeering <PSPeering> [-PeeringName] <String>
+New-AzExchangePeering -LegacyPeering <PSPeering> [-PeeringName] <String>
  [-ResourceGroupName] <String> [-Location] <String> [[-MD5AuthenticationKey] <String>]
  -MaxPrefixesAdvertisedIPv4 <Int32> [-MaxPrefixesAdvertisedIPv6 <Int32>] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -27,14 +27,14 @@ New-AzureRmExchangePeering -LegacyPeering <PSPeering> [-PeeringName] <String>
 
 ### ConvertLegacyPeeringIPv6Prefix
 ```
-New-AzureRmExchangePeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
+New-AzExchangePeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
  [[-MD5AuthenticationKey] <String>] -MaxPrefixesAdvertisedIPv4 <Int32> -MaxPrefixesAdvertisedIPv6 <Int32>
  [-AsJob] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### IPv4Prefix
 ```
-New-AzureRmExchangePeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
+New-AzExchangePeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
  [[-PeeringLocation] <String>] [[-PeeringDBFacilityId] <Int32>] [[-MD5AuthenticationKey] <String>]
  -MaxPrefixesAdvertisedIPv4 <Int32> [-MaxPrefixesAdvertisedIPv6 <Int32>] -SessionIPv4Prefix <String>
  [-SessionIPv6Prefix <String>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -42,28 +42,28 @@ New-AzureRmExchangePeering [-PeeringName] <String> [-ResourceGroupName] <String>
 
 ### IPv6Prefix
 ```
-New-AzureRmExchangePeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
+New-AzExchangePeering [-PeeringName] <String> [-ResourceGroupName] <String> [-Location] <String>
  [[-PeeringLocation] <String>] [[-PeeringDBFacilityId] <Int32>] [[-MD5AuthenticationKey] <String>]
  -MaxPrefixesAdvertisedIPv4 <Int32> -MaxPrefixesAdvertisedIPv6 <Int32> -SessionIPv4Prefix <String>
  -SessionIPv6Prefix <String> [-AsJob] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **New-AzureRmExchangePeering** cmdlet creates new Peering objects in ARM. This cmdlet also allows users to convert from classic models into ARM.
+The **New-AzExchangePeering** cmdlet creates new Peering objects in ARM. This cmdlet also allows users to convert from classic models into ARM.
 
 ## EXAMPLES
 
 ### Example 1
 ```powershell
-PS C:\> New-AzureRmExchangePeering -PeeringName ContosoExchangeAMS -ResourceGroupName ContosoResourceGroupName -Location europewest -PeeringLocation AMS -PeeringDBFacilityId 26 -MD5AuthenticationKey SomeHashContoso -MaxPrefixesAdvertisedIPv4 250 -SessionIPv4Prefix 10.0.0.3/32
+PS C:\> New-AzExchangePeering -PeeringName ContosoExchangeAMS -ResourceGroupName ContosoResourceGroupName -Location europewest -PeeringLocation AMS -PeeringDBFacilityId 26 -MD5AuthenticationKey SomeHashContoso -MaxPrefixesAdvertisedIPv4 250 -SessionIPv4Prefix 10.0.0.3/32
 
 ```
 
-Creates a new Exchange Peering with Microsoft at Peering Facility 26. [Get-AzureRmPeeringLocation](Get-AzureRmPeeringLocation.md) has more information on Peering locations.
+Creates a new Exchange Peering with Microsoft at Peering Facility 26. [Get-AzPeeringLocation](Get-AzPeeringLocation.md) has more information on Peering locations.
 
 ### Example 2
 ```powershell
-PS C:\> New-AzureRmExchangePeering -PeeringName ContosoExchangeAMS -ResourceGroupName ContosoResourceGroupName -Location europewest -MD5AuthenticationKey SomeHashContoso -MaxPrefixesAdvertisedIPv4 250 -MaxPrefixesAdvertisedIPv6 5000
+PS C:\> New-AzExchangePeering -PeeringName ContosoExchangeAMS -ResourceGroupName ContosoResourceGroupName -Location europewest -MD5AuthenticationKey SomeHashContoso -MaxPrefixesAdvertisedIPv4 250 -MaxPrefixesAdvertisedIPv6 5000
 
 ```
 
@@ -92,7 +92,7 @@ The credentials, account, tenant, and subscription used for communication with A
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: AzContext, AzureCredential
 
 Required: False
 Position: Named
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 
 ### -PeeringLocation
 The Physical Location Different from Azure Region.
-Use Get-AzureRmPeeringLocation -Kind \<kind\> use City name as key.
+Use Get-AzPeeringLocation -Kind \<kind\> use City name as key.
 
 ```yaml
 Type: System.String
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 {{Fill LegacyPeering Description}}
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering
+Type: Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering
 Parameter Sets: ParameterSetNameConvertLegacyPeering
 Aliases:
 
@@ -380,7 +380,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering
+### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering
 
 ### System.String
 
@@ -388,7 +388,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering
+### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering
 
 ## NOTES
 

@@ -14,7 +14,7 @@
 
 namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
 {
-    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models;
+    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
     using Microsoft.Azure.Commands.ResourceManager.Common.ArgumentCompleters;
     using Microsoft.Azure.Management.Peering;
     using Microsoft.Azure.Management.Peering.Models;
@@ -26,7 +26,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
     /// <summary>
     ///     New Azure Peering Command-let
     /// </summary>
-    [Cmdlet(VerbsCommon.New, "AzureRmDirectPeering", DefaultParameterSetName = Constants.DeviceAWithDefaultVlan)]
+    [Cmdlet(VerbsCommon.New, "AzDirectPeering", DefaultParameterSetName = Constants.DeviceAWithDefaultVlan)]
     [OutputType(typeof(PSPeering))]
     public class NewAzureDirectPeeringCommand : PeeringBaseCmdlet
     {

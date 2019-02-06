@@ -1,11 +1,11 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.dll-Help.xml
-Module Name: AzureRm.Peering
+Module Name: Az.Peering
 online version:
 schema: 2.0.0
 ---
 
-# New-AzureRmPeering
+# New-AzPeering
 
 ## SYNOPSIS
 Creates new Peering object or updates an already existing object.
@@ -14,7 +14,7 @@ Creates new Peering object or updates an already existing object.
 
 ### DeviceAWithDefaultVlan (Default)
 ```
-New-AzureRmPeering [-AsJob] -BandwidthInMbps <Int32> -DeviceASessionIPv4Prefix <String>
+New-AzPeering [-AsJob] -BandwidthInMbps <Int32> -DeviceASessionIPv4Prefix <String>
  [-DeviceASessionIPv6Prefix <String>] [-Direct] -PeeringLocation <String> -PeeringName <String>
  -ResourceGroupName <String> -Sku <String> [-UseForPeeringService]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -22,7 +22,7 @@ New-AzureRmPeering [-AsJob] -BandwidthInMbps <Int32> -DeviceASessionIPv4Prefix <
 
 ### DeviceAAndBWithDefaultVlan
 ```
-New-AzureRmPeering [-AsJob] -BandwidthInMbps <Int32> -DeviceASessionIPv4Prefix <String>
+New-AzPeering [-AsJob] -BandwidthInMbps <Int32> -DeviceASessionIPv4Prefix <String>
  [-DeviceASessionIPv6Prefix <String>] -DeviceBSessionIPv4Prefix <String> [-DeviceBSessionIPv6Prefix <String>]
  [-Direct] -PeeringLocation <String> -PeeringName <String> -ResourceGroupName <String> -Sku <String>
  [-UseForPeeringService] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -30,7 +30,7 @@ New-AzureRmPeering [-AsJob] -BandwidthInMbps <Int32> -DeviceASessionIPv4Prefix <
 
 ### CDNPeering
 ```
-New-AzureRmPeering [-AsJob] -BandwidthInMbps <Int32> [-CDN] -DeviceASessionIPv4Prefix <String>
+New-AzPeering [-AsJob] -BandwidthInMbps <Int32> [-CDN] -DeviceASessionIPv4Prefix <String>
  [-DeviceASessionIPv6Prefix <String>] -DeviceBSessionIPv4Prefix <String> [-DeviceBSessionIPv6Prefix <String>]
  -PeeringLocation <String> -PeeringName <String> -ProvisionedBandwidthInMbps <Int32>
  -ResourceGroupName <String> -Sku <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -38,29 +38,29 @@ New-AzureRmPeering [-AsJob] -BandwidthInMbps <Int32> [-CDN] -DeviceASessionIPv4P
 
 ### PeeringService
 ```
-New-AzureRmPeering [-AsJob] -CarrierName <String> -PeeringLocation <String>
+New-AzPeering [-AsJob] -CarrierName <String> -PeeringLocation <String>
  -PeeringName <String> -ResourceGroupName <String> -Sku <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ### ExchangePeering
 ```
-New-AzureRmPeering [-AsJob] -DeviceASessionIPv4Prefix <String> [-DeviceASessionIPv6Prefix <String>]
+New-AzPeering [-AsJob] -DeviceASessionIPv4Prefix <String> [-DeviceASessionIPv6Prefix <String>]
  [-Exchange] -PeeringLocation <String> -PeeringName <String> -ResourceGroupName <String>
  -Sku <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **New-AzureRmPeering** cmdlet creates a new Peering object.
+The **New-AzPeering** cmdlet creates a new Peering object.
 
 ## EXAMPLES
 
 ### Direct Peering
 ```powershell
-PS C:\> New-AzureRmPeering -PeeringName Contoso1_SEA_Peering -ResourceGroupName Contoso1 -PeeringLocation $location[0].Properties.PeeringLocation -SKU premium_Direct_Unlimited -DeviceAName Rapter1 -UseForPeeringService -DeviceAColoId ef4 -DeviceARackId 12c -DeviceAPortId xe0/0/0 -DeviceASessionIPv4Prefix 192.168.10.2/31 -DeviceASessionIPv6Prefix fe00::e024/126 -DeviceBName Rapter2 -DeviceBColoId rd5 -DeviceBRackId 13b -DeviceBPortId xe0/0/1 -DeviceBSessionIPv4Prefix 10.2.24.99/30 -DeviceBSessionIPv6Prefix fe01::34fd/127 -BandwidthInMbps 10000
- Sku        : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringSku
+PS C:\> New-AzPeering -PeeringName Contoso1_SEA_Peering -ResourceGroupName Contoso1 -PeeringLocation $location[0].Properties.PeeringLocation -SKU premium_Direct_Unlimited -DeviceAName Rapter1 -UseForPeeringService -DeviceAColoId ef4 -DeviceARackId 12c -DeviceAPortId xe0/0/0 -DeviceASessionIPv4Prefix 192.168.10.2/31 -DeviceASessionIPv6Prefix fe00::e024/126 -DeviceBName Rapter2 -DeviceBColoId rd5 -DeviceBRackId 13b -DeviceBPortId xe0/0/1 -DeviceBSessionIPv4Prefix 10.2.24.99/30 -DeviceBSessionIPv6Prefix fe01::34fd/127 -BandwidthInMbps 10000
+ Sku        : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringSku
 Kind       : Direct
-Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeeringProperties
+Properties : Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeeringProperties
 Name       : Contoso1_SEA_Peering
 Id         : /subscriptions/XXXXXXX-61c4-436f-XXXX-XXXXXXXXX/resourceGroups/Contoso1/providers/Microsoft.Peering/in
              terconnects/Contoso1_SEA_Peering
@@ -70,7 +70,7 @@ ETag       :
 Tags       : {}
 ```
 
-Location must be a location returned by the command Get-AzureRmPeeringLocation. You can store this as a variable $location = Get-AzureRmPeering
+Location must be a location returned by the command Get-AzPeeringLocation. You can store this as a variable $location = Get-AzPeering
 
 ## PARAMETERS
 
@@ -141,7 +141,7 @@ The credentials, account, tenant, and subscription used for communication with A
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
 Parameter Sets: (All)
-Aliases: AzureRmContext, AzureCredential
+Aliases: AzContext, AzureCredential
 
 Required: False
 Position: Named
@@ -341,7 +341,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Models.PSPeering
+### Microsoft.Azure.PowerShell.Cmdlets.Peering.Models.PSPeering
 
 ## NOTES
 
