@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PsModuleName>Peering</PsModuleName>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)..\..\Az.props" />
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\azure-sdk-for-net-pr\src\SDKs\Peering\Management.Peering\Microsoft.Azure.Management.Peering.csproj" />
+  </ItemGroup>
+
+</Project>
