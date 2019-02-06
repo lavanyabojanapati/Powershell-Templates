@@ -12,22 +12,22 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using Microsoft.Azure.Commands.Common.Authentication;
-using Microsoft.Azure.Management.Cdn;
-using Microsoft.Azure.Management.Internal.Resources;
-using Microsoft.Azure.Test.HttpRecorder;
-using Microsoft.Rest.ClientRuntime.Azure.TestFramework;
-using Microsoft.WindowsAzure.Commands.ScenarioTest;
-using Microsoft.WindowsAzure.Commands.Test.Utilities.Common;
-using TestEnvironmentFactory = Microsoft.Rest.ClientRuntime.Azure.TestFramework.TestEnvironmentFactory;
-
-namespace Microsoft.Azure.Commands.Cdn.Test.ScenarioTests.ScenarioTest
+namespace Microsoft.Azure.Commands.Peering.Test.ScenarioTests.ScenarioTests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Linq;
+
+    using Microsoft.Azure.Commands.Common.Authentication;
+    using Microsoft.Azure.Management.Cdn;
+    using Microsoft.Azure.Management.Internal.Resources;
+    using Microsoft.Azure.Test.HttpRecorder;
+    using Microsoft.Rest.ClientRuntime.Azure.TestFramework;
+    using Microsoft.WindowsAzure.Commands.ScenarioTest;
+    using Microsoft.WindowsAzure.Commands.Test.Utilities.Common;
+
     public class TestController : RMTestBase
     {
         private readonly EnvironmentSetupHelper _helper;
@@ -40,17 +40,17 @@ namespace Microsoft.Azure.Commands.Cdn.Test.ScenarioTests.ScenarioTest
 
         protected TestController()
         {
-            _helper = new EnvironmentSetupHelper();
+            this._helper = new EnvironmentSetupHelper();
         }
 
         protected void SetupManagementClients(MockContext context)
         {
-            ResourceManagementClient = GetResourceManagementClient(context);
-            CdnManagementClient = GetCdnManagementClient(context);
+            this.ResourceManagementClient = this.GetResourceManagementClient(context);
+            this.CdnManagementClient = GetCdnManagementClient(context);
 
-            _helper.SetupManagementClients(
-                ResourceManagementClient,
-                CdnManagementClient);
+            this._helper.SetupManagementClients(
+                this.ResourceManagementClient,
+                this.CdnManagementClient);
         }
 
         public void RunPowerShellTest(ServiceManagement.Common.Models.XunitTracingInterceptor logger, params string[] scripts)
@@ -59,8 +59,8 @@ namespace Microsoft.Azure.Commands.Cdn.Test.ScenarioTests.ScenarioTest
             var callingClassType = sf.GetMethod().ReflectedType?.ToString();
             var mockName = sf.GetMethod().Name;
 
-            _helper.TracingInterceptor = logger;
-            RunPsTestWorkflow(
+            this._helper.TracingInterceptor = logger;
+            this.RunPsTestWorkflow(
                 () => scripts,
                 // no custom cleanup
                 null,
@@ -92,24 +92,24 @@ namespace Microsoft.Azure.Commands.Cdn.Test.ScenarioTests.ScenarioTest
 
             using (var context = MockContext.Start(callingClassType, mockName))
             {
-                SetupManagementClients(context);
+                this.SetupManagementClients(context);
 
-                _helper.SetupEnvironment(AzureModule.AzureResourceManager);
+                this._helper.SetupEnvironment(AzureModule.AzureResourceManager);
 
                 var callingClassName = callingClassType.Split(new[] { "." }, StringSplitOptions.RemoveEmptyEntries).Last();
 
-                _helper.SetupModules(AzureModule.AzureResourceManager,
+                this._helper.SetupModules(AzureModule.AzureResourceManager,
                     "ScenarioTests\\Common.ps1",
                     "ScenarioTests\\" + callingClassName + ".ps1",
-                    _helper.RMProfileModule,
-                    _helper.GetRMModulePath("AzureRM.Cdn.psd1"),
+                    this._helper.RMProfileModule,
+                    this._helper.GetRMModulePath("AzureRM.Cdn.psd1"),
                     "AzureRM.Resources.ps1");
                 try
                 {
                     var psScripts = scriptBuilder?.Invoke();
                     if (psScripts != null)
                     {
-                        _helper.RunPowerShellTest(psScripts);
+                        this._helper.RunPowerShellTest(psScripts);
                     }
                 }
                 finally

@@ -25,6 +25,7 @@ namespace Microsoft.Azure.PowerShell.Cmdlets.Peering.Common
     using Microsoft.Azure.Management.Peering;
     using Microsoft.Azure.Management.Peering.Models;
     using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common;
+    using Microsoft.Azure.PowerShell.Cmdlets.Peering.Common.Common;
     using Microsoft.Azure.PowerShell.Cmdlets.Peering.Models;
     using Microsoft.Rest.Azure;
 

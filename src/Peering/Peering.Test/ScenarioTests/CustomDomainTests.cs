@@ -12,41 +12,41 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
-using Microsoft.Azure.Commands.Cdn.Test.ScenarioTests.ScenarioTest;
-using Microsoft.WindowsAzure.Commands.ScenarioTest;
-using Xunit;
-
-namespace Microsoft.Azure.Commands.Cdn.Test.ScenarioTests.ScenarioTest
+namespace Microsoft.Azure.Commands.Peering.Test.ScenarioTests.ScenarioTests
 {
+    using Microsoft.WindowsAzure.Commands.ScenarioTest;
+
+    using Xunit;
+
     public class CustomDomainTests
     {
         private ServiceManagement.Common.Models.XunitTracingInterceptor _logger;
 
         public CustomDomainTests(Xunit.Abstractions.ITestOutputHelper output)
         {
-            _logger = new ServiceManagement.Common.Models.XunitTracingInterceptor(output);
-            ServiceManagement.Common.Models.XunitTracingInterceptor.AddToContext(_logger);
+            this._logger = new ServiceManagement.Common.Models.XunitTracingInterceptor(output);
+            ServiceManagement.Common.Models.XunitTracingInterceptor.AddToContext(this._logger);
         }
 
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
         public void TestCustomDomainEnableDisableWithRunningEndpoint()
         {
-            TestController.NewInstance.RunPowerShellTest(_logger, "Test-CustomDomainEnableDisableWithRunningEndpoint");
+            TestController.NewInstance.RunPowerShellTest(this._logger, "Test-CustomDomainEnableDisableWithRunningEndpoint");
         }
 
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
         public void TestCustomDomainGetRemoveWithRunningEndpoint()
         {
-            TestController.NewInstance.RunPowerShellTest(_logger, "Test-CustomDomainGetRemoveWithRunningEndpoint");
+            TestController.NewInstance.RunPowerShellTest(this._logger, "Test-CustomDomainGetRemoveWithRunningEndpoint");
         }
 
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
         public void TestCustomDomainGetRemoveWithStoppedEndpoint()
         {
-            TestController.NewInstance.RunPowerShellTest(_logger, "Test-CustomDomainGetRemoveWithStoppedEndpoint");
+            TestController.NewInstance.RunPowerShellTest(this._logger, "Test-CustomDomainGetRemoveWithStoppedEndpoint");
         }
     }
 }
