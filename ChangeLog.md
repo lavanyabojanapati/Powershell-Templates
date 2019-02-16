@@ -1,6 +1,6 @@
 ## 1.3.0 - February 2019
 #### Az.Accounts
-* Update to latest version of ClientRuntime
+* Update to latest version of ClientRuntime library
 
 #### Az.AnalysisServices
 General availability for Az.AnalysisServices module.
