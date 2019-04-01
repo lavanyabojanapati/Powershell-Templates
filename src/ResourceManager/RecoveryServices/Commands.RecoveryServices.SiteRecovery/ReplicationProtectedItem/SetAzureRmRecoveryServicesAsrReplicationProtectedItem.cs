@@ -120,7 +120,6 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
         ///     Gets or sets the availability set for replication protected item after failover.
         /// </summary>
         [Parameter]
-        [ValidateNotNullOrEmpty]
         public string RecoveryAvailabilitySet { get; set; }
 
         /// <summary>
@@ -187,7 +186,8 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
                     string.IsNullOrEmpty(this.PrimaryNic) &&
                     string.IsNullOrEmpty(this.RecoveryNetworkId) &&
                     this.UseManagedDisk == null &&
-                    string.IsNullOrEmpty(this.RecoveryAvailabilitySet) &&
+                    !this.MyInvocation.BoundParameters.ContainsKey(
+                            Utilities.GetMemberName(() => this.RecoveryAvailabilitySet))&&
                     string.IsNullOrEmpty(this.RecoveryCloudServiceId) &&
                     string.IsNullOrEmpty(this.RecoveryResourceGroupId) &&
                     string.IsNullOrEmpty(this.LicenseType) &&
@@ -244,7 +244,8 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
                         licenseType = providerSpecificDetails.LicenseType;
                     }
 
-                    if (string.IsNullOrEmpty(this.RecoveryAvailabilitySet))
+                    if (!this.MyInvocation.BoundParameters.ContainsKey(
+                            Utilities.GetMemberName(() => this.RecoveryAvailabilitySet)))
                     {
                         availabilitySetId = providerSpecificDetails.RecoveryAvailabilitySetId;
                     }
@@ -313,7 +314,8 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
                         licenseType = providerSpecificDetails.LicenseType;
                     }
 
-                    if (string.IsNullOrEmpty(this.RecoveryAvailabilitySet))
+                    if (!this.MyInvocation.BoundParameters.ContainsKey(
+                            Utilities.GetMemberName(() => this.RecoveryAvailabilitySet)))
                     {
                         availabilitySetId = providerSpecificDetails.RecoveryAvailabilitySetId;
                     }

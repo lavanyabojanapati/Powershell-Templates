@@ -14,13 +14,15 @@
 
 using System.Management.Automation;
 using Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models;
+using System;
+using Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.Properties;
 
 namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
 {
     /// <summary>
     ///     Updates Azure Site Recovery Network mapping.
     /// </summary>
-    [Cmdlet("Update", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "RecoveryServicesAsrNetworkMapping",DefaultParameterSetName = ASRParameterSets.ByNetworkObject,SupportsShouldProcess = true)]
+    [Cmdlet("Update", ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "RecoveryServicesAsrNetworkMapping", DefaultParameterSetName = ASRParameterSets.ByNetworkObject, SupportsShouldProcess = true)]
     [OutputType(typeof(ASRJob))]
     public class UpdateAzureRmRecoveryServicesAsrNetworkMapping : SiteRecoveryCmdletBase
     {
@@ -100,7 +102,7 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
             {
                 Properties = new UpdateNetworkMappingInputProperties
                 {
-                    RecoveryFabricName = this.InputObject.RecoveryFabricFriendlyName,
+                    RecoveryFabricName = this.GetFabricNameByFriendlyName(this.InputObject.RecoveryFabricFriendlyName),
                     RecoveryNetworkId = this.RecoveryAzureNetworkId,
                     FabricSpecificDetails = new AzureToAzureUpdateNetworkMappingInput
                     {
@@ -184,6 +186,41 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
                 PSRecoveryServicesClient.GetJobIdFromReponseLocation(response.Location));
 
             this.WriteObject(new ASRJob(jobResponse));
+        }
+
+        /// <summary>
+        ///     Get fabric by friendly name.
+        /// </summary>
+        private string GetFabricNameByFriendlyName(string fabricFriendlyName)
+        {
+            var fabricListResponse = this.RecoveryServicesClient.GetAzureSiteRecoveryFabric();
+
+            string fabricName = null;
+            foreach (var fabric in fabricListResponse)
+            {
+                if (0 ==
+                    string.Compare(
+                        fabricFriendlyName,
+                        fabric.Properties.FriendlyName,
+                        StringComparison.OrdinalIgnoreCase))
+                {
+                    fabricName = fabric.Name;
+
+                }
+            }
+
+            if (string.IsNullOrEmpty(fabricName))
+            {
+                throw new InvalidOperationException(
+                    string.Format(
+                        Resources.FabricNotFound,
+                        fabricFriendlyName,
+                        PSRecoveryServicesClient.asrVaultCreds.ResourceName));
+            }
+            else
+            {
+                return fabricName;
+            }
         }
     }
 }

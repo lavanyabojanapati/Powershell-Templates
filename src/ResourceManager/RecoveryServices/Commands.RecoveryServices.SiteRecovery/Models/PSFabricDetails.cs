@@ -537,7 +537,8 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
     /// </summary>
     public class ASRHyperVReplicaDiskDetails
     {
-        public ASRHyperVReplicaDiskDetails(DiskDetails diskDetails) {
+        public ASRHyperVReplicaDiskDetails(DiskDetails diskDetails)
+        {
             this.MaxSizeMB = diskDetails.MaxSizeMB;
             this.VhdId = diskDetails.VhdId;
             this.VhdName = diskDetails.VhdName;
@@ -937,18 +938,35 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
                 this.LastHeartbeat = details.LastHeartbeat.Value.ToLocalTime();
             }
 
-            if (details.ProtectedDisks != null)
+            if (details.ProtectedDisks != null && details.ProtectedDisks.Count > 0)
             {
                 this.A2ADiskDetails =
                     details.ProtectedDisks.ToList()
                     .ConvertAll(disk => new ASRAzureToAzureProtectedDiskDetails(disk));
             }
 
-            if (details.ProtectedManagedDisks != null)
+            if (details.ProtectedManagedDisks != null && details.ProtectedManagedDisks.Count > 0)
             {
-                this.A2ADiskDetails =
-                    details.ProtectedManagedDisks.ToList()
-                    .ConvertAll(disk => new ASRAzureToAzureProtectedDiskDetails(disk));
+                if (this.A2ADiskDetails == null)
+                {
+                    this.A2ADiskDetails = new List<ASRAzureToAzureProtectedDiskDetails>();
+                }
+                this.A2ADiskDetails.AddRange(
+                details.ProtectedManagedDisks.ToList()
+                .ConvertAll(disk => new ASRAzureToAzureProtectedDiskDetails(disk)));
+            }
+
+            if (details.UnprotectedDisks != null && details.UnprotectedDisks.Count > 0)
+            {
+                this.A2AUnprotectedDiskDetails = new List<A2AUnprotectedDiskDetails>();
+                foreach (var unprotectedDisk in details.UnprotectedDisks)
+                {
+                    this.A2AUnprotectedDiskDetails.Add(
+                        new A2AUnprotectedDiskDetails
+                        {
+                            DiskLunId = unprotectedDisk.DiskLunId ?? -1
+                        });
+                }
             }
 
             if (details.VmSyncedConfigDetails != null)
@@ -1031,6 +1049,11 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
         /// Gets or sets A2A specific protected disk details.
         /// </summary>
         public List<ASRAzureToAzureProtectedDiskDetails> A2ADiskDetails { get; set; }
+
+        /// <summary>
+        /// Gets or sets A2A unprotected disk details.
+        /// </summary>
+        public List<A2AUnprotectedDiskDetails> A2AUnprotectedDiskDetails { get; set; }
 
         /// <summary>
         /// Gets or sets the recovery fabric object Id.

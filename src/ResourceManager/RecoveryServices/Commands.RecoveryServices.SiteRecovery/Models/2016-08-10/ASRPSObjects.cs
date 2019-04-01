@@ -342,13 +342,6 @@ namespace Microsoft.Azure.Management.RecoveryServices.SiteRecovery.Models
                 this.Tags = new Dictionary<string, string>(details.Tags);
             }
 
-            if (details.RoleAssignments != null)
-            {
-                this.RoleAssignments =
-                    details.RoleAssignments.ToList()
-                    .ConvertAll(role => new ASRRoleAssignment_2016_08_10(role));
-            }
-
             if (details.InputEndpoints != null)
             {
                 this.InputEndpoints =

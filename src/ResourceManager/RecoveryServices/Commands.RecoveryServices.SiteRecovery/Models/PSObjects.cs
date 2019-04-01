@@ -1243,6 +1243,8 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
                         this.NicDetailsList.Add(new ASRVMNicDetails(n));
                     }
                 }
+
+                this.ProviderSpecificDetails = new ASRHyperVReplicaAzureSpecificRPIDetails(providerSpecificDetails);
             }
             else if (rpi.Properties.ProviderSpecificDetails is HyperVReplicaReplicationDetails)
             {
@@ -1278,40 +1280,7 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
                 }
 
                 // Set the InMageAzureV2 specific properties.
-                var inMageAzureV2RPIDetails =
-                    new ASRInMageAzureV2SpecificRPIDetails
-                    {
-                        IpAddress = providerSpecificDetails.IpAddress,
-                        ProcessServerId = providerSpecificDetails.ProcessServerId,
-                        MasterTargetId = providerSpecificDetails.MasterTargetId,
-                        OSType = providerSpecificDetails.OsType,
-                        OSDiskId = providerSpecificDetails.OsDiskId,
-                        VHDName = providerSpecificDetails.VhdName,
-                        MultiVmGroupId = providerSpecificDetails.MultiVmGroupId,
-                        MultiVmGroupName = providerSpecificDetails.MultiVmGroupName,
-                        AgentVersion = providerSpecificDetails.AgentVersion,
-                        DiscoveryType = providerSpecificDetails.DiscoveryType,
-                        LastHeartbeat = providerSpecificDetails.LastHeartbeat,
-                        ProtectionStage = providerSpecificDetails.ProtectionStage,
-                        RecoveryAzureLogStorageAccountId =
-                            providerSpecificDetails.RecoveryAzureLogStorageAccountId
-                    };
-
-                if (providerSpecificDetails.ProtectedDisks != null)
-                {
-                    inMageAzureV2RPIDetails.ProtectedDiskDetails = new List<AsrVirtualHardDisk>();
-                    foreach (var pd in providerSpecificDetails.ProtectedDisks)
-                    {
-                        inMageAzureV2RPIDetails.ProtectedDiskDetails.Add(
-                            new AsrVirtualHardDisk
-                            {
-                                Id = pd.DiskId,
-                                Name = pd.DiskName
-                            });
-                    }
-                }
-
-                this.ProviderSpecificDetails = inMageAzureV2RPIDetails;
+                this.ProviderSpecificDetails = new ASRInMageAzureV2SpecificRPIDetails(providerSpecificDetails);
             }
             else if (rpi.Properties.ProviderSpecificDetails is InMageReplicationDetails)
             {
@@ -2291,6 +2260,7 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
             this.DiskCapacityInBytes = disk.DiskCapacityInBytes;
             this.DiskName = disk.DiskName;
             this.DiskType = disk.DiskType;
+            this.DiskState = disk.DiskState;
             this.Managed = false;
         }
 
@@ -2309,6 +2279,7 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
             this.DiskCapacityInBytes = disk.DiskCapacityInBytes;
             this.DiskName = disk.DiskName;
             this.DiskType = disk.DiskType;
+            this.DiskState = disk.DiskState;
             this.RecoveryReplicaDiskAccountType = disk.RecoveryReplicaDiskAccountType;
             this.RecoveryReplicaDiskId = disk.RecoveryReplicaDiskId;
             this.RecoveryResourceGroupId = disk.RecoveryResourceGroupId;
@@ -2385,6 +2356,11 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
         public string DiskType { get; set; }
 
         /// <summary>
+        /// Gets or sets the diskState.
+        /// </summary>
+        public string DiskState { get; set; }
+
+        /// <summary>
         /// Gets or sets recovery disk uri.
         /// </summary>
         public string RecoveryDiskUri { get; set; }
@@ -2446,13 +2422,6 @@ namespace Microsoft.Azure.Commands.RecoveryServices.SiteRecovery
             else
             {
                 this.Tags = new Dictionary<string, string>(details.Tags);
-            }
-
-            if (details.RoleAssignments != null)
-            {
-                this.RoleAssignments =
-                    details.RoleAssignments.ToList()
-                    .ConvertAll(role => new ASRRoleAssignment(role));
             }
 
             if (details.InputEndpoints != null)

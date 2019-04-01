@@ -45,7 +45,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Azure.Management.RecoveryServices.SiteRecovery, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Microsoft.Azure.Management.RecoveryServices.SiteRecovery.1.2.1-preview\lib\net452\Microsoft.Azure.Management.RecoveryServices.SiteRecovery.dll</HintPath>
+      <HintPath>..\..\..\packages\Microsoft.Azure.Management.RecoveryServices.SiteRecovery.2.0.0-preview\lib\net452\Microsoft.Azure.Management.RecoveryServices.SiteRecovery.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Extensions" />
   </ItemGroup>
@@ -108,6 +108,7 @@
     <Compile Include="RecoveryPlan\EditAzureRmRecoveryServicesAsrRecoveryPlan.cs" />
     <Compile Include="RecoveryPlan\NewAzureRmRecoveryServicesAsrRecoveryPlan.cs" />
     <Compile Include="RecoveryPoint\GetAzureRmRecoveryServicesAsrRecoveryPoint.cs" />
+    <Compile Include="ReplicationProtectedItem\AddAzureRmRecoveryServicesAsrReplicationProtectedItemDisk.cs" />
     <Compile Include="ReplicationProtectedItem\GetAzureRmRecoveryServicesAsrReplicationProtectedItem.cs" />
     <Compile Include="ReplicationProtectedItem\NewAzureRmRecoveryServicesAsrReplicationProtectedItem.cs" />
     <Compile Include="ReplicationProtectedItem\RemoveAzureRmRecoveryServicesAsrReplicationProtectedItem.cs" />
