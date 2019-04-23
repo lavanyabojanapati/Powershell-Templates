@@ -1371,6 +1371,8 @@
     "New-AzApplicationGatewayUrlPathMapConfig": "New-AzureRmApplicationGatewayUrlPathMapConfig",
     "Remove-AzApplicationGatewayUrlPathMapConfig": "Remove-AzureRmApplicationGatewayUrlPathMapConfig",
     "Set-AzApplicationGatewayUrlPathMapConfig": "Set-AzureRmApplicationGatewayUrlPathMapConfig",
+    "New-AzApplicationGatewayOnDemandProbe": "New-AzureRmApplicationGatewayOnDemandProbe",
+    "Get-AzApplicationGatewayBackendHealthOnDemand":  "Get-AzureRmApplicationGatewayBackendHealthOnDemand",
     "Add-AzExpressRouteCircuitAuthorization": "Add-AzureRmExpressRouteCircuitAuthorization",
     "Get-AzExpressRouteCircuitAuthorization": "Get-AzureRmExpressRouteCircuitAuthorization",
     "New-AzExpressRouteCircuitAuthorization": "New-AzureRmExpressRouteCircuitAuthorization",
