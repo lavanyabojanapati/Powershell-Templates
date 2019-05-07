@@ -31,7 +31,7 @@ using System.Management.Automation;
 
 namespace Microsoft.Azure.Commands.Compute.Automation
 {
-    [Cmdlet(VerbsData.Export, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "LogAnalyticThrottledRequests", DefaultParameterSetName = "DefaultParameter", SupportsShouldProcess = true)]
+    [Cmdlet(VerbsData.Export, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "LogAnalyticThrottledRequest", DefaultParameterSetName = "DefaultParameter", SupportsShouldProcess = true)]
     [OutputType(typeof(PSLogAnalyticsOperationResult))]
     public partial class ExportAzureRmLogAnalyticThrottledRequests : ComputeAutomationBaseCmdlet
     {
