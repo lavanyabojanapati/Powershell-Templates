@@ -96,7 +96,7 @@ namespace Commands.Network.Test.ScenarioTests
         public void TestAvailableServerVariableAndHeader()
         {
             TestRunner.RunTestScript("Test-AvailableServerVariableAndHeader");
-	}
+	    }
 
         [Fact]
         [Trait(Category.AcceptanceType, Category.CheckIn)]
@@ -104,6 +104,14 @@ namespace Commands.Network.Test.ScenarioTests
         public void TestApplicationGatewayCRUDRewriteRuleSetWithConditions()
         {
             TestRunner.RunTestScript(string.Format("Test-ApplicationGatewayCRUDRewriteRuleSetWithConditions -baseDir '{0}'", AppDomain.CurrentDomain.BaseDirectory));
+        }
+
+        [Fact]
+        [Trait(Category.AcceptanceType, Category.CheckIn)]
+        [Trait(Category.Owner, NrpTeamAlias.nvadev)]
+        public void TestApplicationGatewayOnDemandHealthProbe()
+        {
+            TestRunner.RunTestScript(string.Format("Test-ApplicationGatewayOnDemandHealthProbe -baseDir '{0}'", AppDomain.CurrentDomain.BaseDirectory));
         }
     }
 }

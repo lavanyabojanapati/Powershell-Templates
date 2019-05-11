@@ -3026,6 +3026,36 @@
       </ListControl>
     </View>
     <View>
+      <Name>Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHealthOnDemand</Name>
+      <ViewSelectedBy>
+        <TypeName>Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHealthOnDemand</TypeName>
+      </ViewSelectedBy>
+      <ListControl>
+        <ListEntries>
+          <ListEntry>
+            <ListItems>
+              <ListItem>
+                <Label>BackendAddressPool</Label>
+                <PropertyName>BackendAddressPool</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>BackendAddressPoolText</Label>
+                <PropertyName>BackendAddressPoolText</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>BackendHealthHttpSettings</Label>
+                <PropertyName>BackendHealthHttpSettings</PropertyName>
+              </ListItem>
+              <ListItem>
+                <Label>BackendHealthHttpSettingsText</Label>
+                <PropertyName>BackendHealthHttpSettingsText</PropertyName>
+              </ListItem>              
+            </ListItems>
+          </ListEntry>
+        </ListEntries>
+      </ListControl>
+    </View>
+    <View>
       <Name>Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAvailableWafRuleSetsResult</Name>
       <ViewSelectedBy>
         <TypeName>Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAvailableWafRuleSetsResult</TypeName>

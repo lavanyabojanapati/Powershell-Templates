@@ -1833,3 +1833,96 @@ function Test-AvailableServerVariableAndHeader
 	Assert-NotNull $result
 	Assert-True { $result.AvailableResponseHeader.Count -gt 0 }
 }
+
+
+<#
+.SYNOPSIS
+Application gateway On Demand Health Probe test
+#>
+function Test-ApplicationGatewayOnDemandHealthProbe
+{
+	param
+	(
+		$basedir = "./"
+	)
+
+	# Setup
+	$location = Get-ProviderLocation "Microsoft.Network/applicationGateways" "eastus2euap"
+
+	$rgname = Get-ResourceGroupName
+	$appgwName = Get-ResourceName
+	$vnetName = Get-ResourceName
+	$gwSubnetName = Get-ResourceName
+	$publicIpName = Get-ResourceName
+	$gipconfigname = Get-ResourceName
+
+	$frontendPort01Name = Get-ResourceName
+	$fipconfigName = Get-ResourceName
+	$listener01Name = Get-ResourceName
+
+	$poolName = Get-ResourceName
+	$poolSetting01Name = Get-ResourceName
+
+	$rule01Name = Get-ResourceName
+
+	$probeHttpName = Get-ResourceName
+
+	try
+	{
+		# Create the resource group
+		$resourceGroup = New-AzResourceGroup -Name $rgname -Location $location -Tags @{ testtag = "APPGw tag"}
+		# Create the Virtual Network
+		$gwSubnet = New-AzVirtualNetworkSubnetConfig -Name $gwSubnetName -AddressPrefix 10.0.0.0/24
+		$vnet = New-AzvirtualNetwork -Name $vnetName -ResourceGroupName $rgname -Location $location -AddressPrefix 10.0.0.0/16 -Subnet $gwSubnet
+		$vnet = Get-AzvirtualNetwork -Name $vnetName -ResourceGroupName $rgname
+		$gwSubnet = Get-AzVirtualNetworkSubnetConfig -Name $gwSubnetName -VirtualNetwork $vnet
+		
+		# Create public ip
+		$publicip = New-AzPublicIpAddress -ResourceGroupName $rgname -name $publicIpName -location $location -AllocationMethod Static -sku Standard
+
+		# Create ip configuration
+		$gipconfig = New-AzApplicationGatewayIPConfiguration -Name $gipconfigname -Subnet $gwSubnet
+
+		$fipconfig = New-AzApplicationGatewayFrontendIPConfig -Name $fipconfigName -PublicIPAddress $publicip
+		$fp01 = New-AzApplicationGatewayFrontendPort -Name $frontendPort01Name  -Port 80
+		$listener01 = New-AzApplicationGatewayHttpListener -Name $listener01Name -Protocol Http -FrontendIPConfiguration $fipconfig -FrontendPort $fp01
+
+		# backend part
+		$pool = New-AzApplicationGatewayBackendAddressPool -Name $poolName -BackendIPAddresses www.microsoft.com, www.bing.com
+		$poolSetting01 = New-AzApplicationGatewayBackendHttpSettings -Name $poolSetting01Name -Port 80 -Protocol Http -PickHostNameFromBackendAddress -CookieBasedAffinity Disabled
+
+		#rule
+		$rule01 = New-AzApplicationGatewayRequestRoutingRule -Name $rule01Name -RuleType basic -BackendHttpSettings $poolSetting01 -HttpListener $listener01 -BackendAddressPool $pool
+
+		# sku
+		$sku = New-AzApplicationGatewaySku -Name Standard_v2 -Tier Standard_v2
+
+		# autoscale configuration
+		$autoscaleConfig = New-AzApplicationGatewayAutoscaleConfiguration -MinCapacity 3
+
+		# Create Application Gateway
+		$appgw = New-AzApplicationGateway -Name $appgwName -ResourceGroupName $rgname -Location $location -Probes $probeHttp -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting01 -FrontendIpConfigurations $fipconfig -GatewayIpConfigurations $gipconfig -FrontendPorts $fp01 -HttpListeners $listener01 -RequestRoutingRules $rule01 -Sku $sku -AutoscaleConfiguration $autoscaleConfig
+
+		# Get Application Gateway
+		$getgw = Get-AzApplicationGateway -Name $appgwName -ResourceGroupName $rgname
+
+		# Operational State
+		Assert-AreEqual "Running" $getgw.OperationalState
+
+		$probeRequest = New-AzApplicationGatewayOnDemandProbe -Protocol Http -PickHostNameFromBackendHttpSettings -path "/" -BackendPoolName $poolName -BackendHttpSettingName $poolSetting01Name -Timeout 30
+		# Get Application Gateway backend health with expanded resource
+		$job = Get-AzApplicationGatewayBackendHealthOnDemand -Name $appgwName -ResourceGroupName $rgname -ProbeRequest $probeRequest -ExpandResource "getBackendHealthOnDemand/applicationgatewayresource" -AsJob
+		$job | Wait-Job
+		$backendHealth = $job | Receive-Job
+		Assert-NotNull $backendHealth.BackendAddressPool.Name
+		Assert-AreEqual "Healthy" $backendHealth.BackendHealthHttpSettings.Servers[0].health
+
+		# Delete Application Gateway
+		Remove-AzApplicationGateway -Name $appgwName -ResourceGroupName $rgname -Force
+	}
+	finally
+	{
+		# Cleanup
+		Clean-ResourceGroup $rgname
+	}
+}
