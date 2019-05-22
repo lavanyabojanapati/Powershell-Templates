@@ -80,6 +80,7 @@ Accept wildcard characters: False
 
 ### -Name
 The Name of the Rule.
+Spaces are not permitted in the rule name.
 
 ```yaml
 Type: System.String
