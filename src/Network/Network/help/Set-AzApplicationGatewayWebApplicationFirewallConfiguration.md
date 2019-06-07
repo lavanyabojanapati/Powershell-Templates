@@ -199,6 +199,7 @@ Accept wildcard characters: False
 ### -RuleSetVersion
 The version of the rule set type.
 The acceptable values for this parameter are: 
+- 3.1
 - 3.0
 - 2.2.9
 
@@ -206,7 +207,7 @@ The acceptable values for this parameter are:
 Type: System.String
 Parameter Sets: (All)
 Aliases:
-Accepted values: 3.0, 2.2.9
+Accepted values: 3.1, 3.0, 2.2.9
 
 Required: False
 Position: Named
