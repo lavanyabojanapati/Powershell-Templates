@@ -18,6 +18,11 @@
         - Additional information about change #1
 --->
 ## Upcoming Release
+* Add support for Virtual Network Subnet Initialization preview
+    - New cmdlets
+        - Initialize-AzVirtualNetworkSubnetPolicy
+        
+## Version 1.12.0
 * Add support for private endpoint and private link service
     - New cmdlets
         - Set-AzPrivateEndpoint
@@ -28,9 +33,6 @@
         - Remove-AzPrivateEndpointConnection
         - Test-AzPrivateLinkServiceVisibility
         - Get-AzAutoApprovedPrivateLinkService
-* Add support for Virtual Network Subnet Initialization
-    - New cmdlets
-        - Initialize-AzVirtualNetworkSubnetPolicy
 * Updated below commands for feature: PrivateEndpointNetworkPolicies/PrivateLinkServiceNetworkPolicies flag on Subnet in Virtualnetwork
     - Updated New-AzVirtualNetworkSubnetConfig/Set-AzVirtualNetworkSubnetConfig/Add-AzVirtualNetworkSubnetConfig
         - Added optional parameter -PrivateEndpointNetworkPoliciesFlag to indicate that enable or disable apply network policies on pivate endpoint in this subnet.
