@@ -2,53 +2,53 @@
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
 ms.assetid: D1D51DEF-05DE-45C4-9013-A02A5B248EAC
-online version: https://docs.microsoft.com/en-us/powershell/module/az.network/initialize-azvirtualnetworksubnetpolicy
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/reset-azvirtualnetworksubnetpolicy
 schema: 2.0.0
 ---
 
-# Initialize-AzVirtualNetworkSubnetPolicy
+# Reset-AzVirtualNetworkSubnetPolicy
 
 ## SYNOPSIS
-Gives permissions to a delegated service to apply or modify network policies on the subnet.
+Removes permissions to a delegated service to apply or modify network policies on the subnet.
 
 ## SYNTAX
 
 ### SetByResourceId (Default)
 ```
-Initialize-AzVirtualNetworkSubnetPolicy -Name <String> -ServiceName <String> -ResourceId <String>
+Reset-AzVirtualNetworkSubnetPolicy -Name <String> -ServiceName <String> -ResourceId <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### VirtualNetworkParameterSet
 ```
-Initialize-AzVirtualNetworkSubnetPolicy -Name <String> -ServiceName <String> -VirtualNetwork <PSVirtualNetwork>
+Reset-AzVirtualNetworkSubnetPolicy -Name <String> -ServiceName <String> -VirtualNetwork <PSVirtualNetwork>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-The **Initialize-AzVirtualNetworkSubnetPolicy** cmdlet gives permissions to a delegated service to apply or modify network intent policies on the subnet.
+The **Reset-AzVirtualNetworkSubnetPolicy** cmdlet removes permissions to a delegated service to apply or modify network intent policies on the subnet.
 
 ## EXAMPLES
 
-### Example 1: Initialize the subnet with network policies for first delegated service
+### Example 1: Reset the subnet network policies for first delegated service
 ```
 $serviceNames = Get-AzAvailableServiceDelegation -Location "westus" | ForEach-Object {Write-Output $_.ServiceName}
 
 $virtualNetwork = Get-AzVirtualNetwork -ResourceGroupName $resourceGroupName -Name $virtualNetworkName
 
-Initialize-AzVirtualNetworkSubnetPolicy -Name $subnetName -VirtualNetwork $virtualNetwork -ServiceName $serviceNames[0]
+Reset-AzVirtualNetworkSubnetPolicy -Name $subnetName -VirtualNetwork $virtualNetwork -ServiceName $serviceNames[0]
 ```
 
-### Example 2: Initialize the subnet with network policies for first delegated service using resourceId
+### Example 2: Reset the subnet network policies for first delegated service using resourceId
 ```
 $serviceNames = Get-AzAvailableServiceDelegation -Location "westus" | ForEach-Object {Write-Output $_.ServiceName}
 
-Initialize-AzVirtualNetworkSubnetPolicy -Name $subnetName -ResourceId $resourceId -ServiceName $serviceNames[0]
+Reset-AzVirtualNetworkSubnetPolicy -Name $subnetName -ResourceId $resourceId -ServiceName $serviceNames[0]
 ```
 
-### Example 3: Initialize the subnet with network policies for first delegated using piping
+### Example 3: Reset the subnet network policies for first delegated using piping
 ```
-Get-AzVirtualNetwork -ResourceGroupName $rgName -Name $vNetName | Initialize-AzVirtualNetworkSubnetPolicy -Name $subnetName -ServiceName Microsoft.Databricks/workspaces
+Get-AzVirtualNetwork -ResourceGroupName $rgName -Name $vNetName | Reset-AzVirtualNetworkSubnetPolicy -Name $subnetName -ServiceName Microsoft.Databricks/workspaces
 ```
 
 ## PARAMETERS

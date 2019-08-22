@@ -12,19 +12,19 @@
 // limitations under the License.
 // ----------------------------------------------------------------------------------
 
-using Microsoft.Azure.Commands.Network.Models;
-using Microsoft.Azure.Management.Network;
-using Microsoft.Azure.Management.Network.Models;
 using System;
 using System.Linq;
 using System.Management.Automation;
-using Microsoft.WindowsAzure.Commands.Utilities.Common;
+using Microsoft.Azure.Commands.Network.Models;
 using Microsoft.Azure.Management.Internal.Resources.Utilities.Models;
+using Microsoft.Azure.Management.Network;
+using Microsoft.Azure.Management.Network.Models;
+using Microsoft.WindowsAzure.Commands.Utilities.Common;
 
 namespace Microsoft.Azure.Commands.Network
 {
-    [Cmdlet(VerbsData.Initialize, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "VirtualNetworkSubnetPolicy", SupportsShouldProcess = true, DefaultParameterSetName = DefaultParameterSet), OutputType(typeof(PSSubnet))]
-    public class InitializeAzureVirtualNetworkSubnetPolicyCommand : VirtualNetworkBaseCmdlet
+    [Cmdlet(VerbsCommon.Reset, ResourceManager.Common.AzureRMConstants.AzureRMPrefix + "VirtualNetworkSubnetPolicy", SupportsShouldProcess = true, DefaultParameterSetName = DefaultParameterSet), OutputType(typeof(PSSubnet))]
+    public class ResetAzureVirtualNetworkSubnetPolicyCommand : VirtualNetworkBaseCmdlet
     {
         private const string DefaultParameterSet = "SetByResourceId";
         private const string VirtualNetworkParameterSet = "VirtualNetworkParameterSet";
@@ -56,7 +56,7 @@ namespace Microsoft.Azure.Commands.Network
             Mandatory = true,
             ParameterSetName = VirtualNetworkParameterSet,
             ValueFromPipeline = true,
-            HelpMessage = "The virtualNetwork containing the subnets trying to initialze")]
+            HelpMessage = "The virtualNetwork object")]
         public PSVirtualNetwork VirtualNetwork { get; set; }
 
         [Parameter(
@@ -85,13 +85,13 @@ namespace Microsoft.Azure.Commands.Network
             {
                 throw new ArgumentException(Properties.Resources.SubnetWithTheSpecifiedNameDoesNotExist);
             }
-
-            if (ShouldProcess(string.Format(Properties.Resources.Subnet0, this.Name), Properties.Resources.Initialize))
+            
+            if (ShouldProcess(string.Format(Properties.Resources.Subnet0, this.Name), Properties.Resources.Reset))
             {
                 // call prepareNetworkPolicies API
-                var prepareRequestParams = new PrepareNetworkPoliciesRequest(this.ServiceName);
-                this.NetworkClient.NetworkManagementClient.Subnets.PrepareNetworkPolicies(this.VirtualNetwork.ResourceGroupName,
-                                this.VirtualNetwork.Name, this.Name, prepareRequestParams);
+                var unPrepareRequestParams = new UnprepareNetworkPoliciesRequest(this.ServiceName);
+                this.NetworkClient.NetworkManagementClient.Subnets.UnprepareNetworkPolicies(this.VirtualNetwork.ResourceGroupName,
+                                this.VirtualNetwork.Name, this.Name, unPrepareRequestParams);
 
                 var getVirtualNetwork = GetVirtualNetwork(this.VirtualNetwork.ResourceGroupName, this.VirtualNetwork.Name);
                 var getSubnet = getVirtualNetwork.Subnets.SingleOrDefault(resource => string.Equals(resource.Name, this.Name, StringComparison.CurrentCultureIgnoreCase));
