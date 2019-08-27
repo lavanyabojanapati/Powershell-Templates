@@ -20,7 +20,7 @@
     * Overview of change #1
         - Additional information about change #1
 --->
-## Upcoming Release
+## Version 1.13.1-preview
 * Add support for Virtual Network Subnet Initialization
     - New cmdlets
         - Initialize-AzVirtualNetworkSubnetPolicy
