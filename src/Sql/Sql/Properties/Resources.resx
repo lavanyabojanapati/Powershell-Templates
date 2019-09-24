@@ -415,7 +415,7 @@
     <value>Vulnerability assessment settings are not defined. Please run Update-AzSqlServerVulnerabilityAssessmentSettings first.</value>
   </data>
   <data name="InvalidBlobStorageSasUri" xml:space="preserve">
-    <value>Invalid BlobStorageSasUri parameter value. The value should be in format of https://mystorage.blob.core.windows.net/vulnerability-assessment?st=XXXXXX."</value>
+    <value>Invalid BlobStorageSasUri parameter value. The value should be in format of https://mystorage.blob.core.windows.net/vulnerability-assessment."</value>
   </data>
   <data name="NoStorageAccountSpecified" xml:space="preserve">
     <value>Please provide valid value for StorageAccountName or BlobStorageSasUri parameter.</value>
