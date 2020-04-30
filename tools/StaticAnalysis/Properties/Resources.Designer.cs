@@ -475,6 +475,70 @@ namespace StaticAnalysis.Netcore.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;Accessibility&quot;: &quot;4.0.0.0&quot;,
+        ///  &quot;CustomMarshalers&quot;: &quot;4.0.0.0&quot;,
+        ///  &quot;ISymWrapper&quot;: &quot;4.0.0.0&quot;,
+        ///  &quot;Microsoft.Activities.Build&quot;: &quot;4.0.0.0&quot;,
+        ///  &quot;Microsoft.Build&quot;: &quot;4.0.0.0&quot;,
+        ///  &quot;Microsoft.Build.Conversion.v4.0&quot;: &quot;4.0.0.0&quot;,
+        ///  &quot;Microsoft.Build.Engine&quot;: &quot;4.0.0.0&quot;,
+        ///  &quot;Microsoft.Build.Framework&quot;: &quot;4.0.0.0&quot;,
+        ///  &quot;Microsoft.Build.Tasks.v4.0&quot;: &quot;4.0.0.0&quot;,
+        ///  &quot;Microsoft.Build.Utilities.v4.0&quot;: &quot;4.0.0.0&quot;,
+        ///  &quot;Microsoft.CSharp&quot;: &quot;4.0.0.0&quot;,
+        ///  &quot;Microsoft.JScript&quot;: &quot;10.0.0.0&quot;,
+        ///  &quot;Microsoft.VisualBasic&quot;: &quot;10.0.0.0&quot;,
+        ///  &quot;M [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string pwsh5_1_0 {
+            get {
+                return ResourceManager.GetString("pwsh5_1_0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;Markdig.Signed.dll&quot;: &quot;0.17.1.0&quot;,
+        ///  &quot;Microsoft.ApplicationInsights.dll&quot;: &quot;2.12.0.21496&quot;,
+        ///  &quot;Microsoft.CodeAnalysis.CSharp.dll&quot;: &quot;2.10.0.0&quot;,
+        ///  &quot;Microsoft.CodeAnalysis.dll&quot;: &quot;2.10.0.0&quot;,
+        ///  &quot;Microsoft.CSharp.dll&quot;: &quot;4.0.4.0&quot;,
+        ///  &quot;Microsoft.Management.Infrastructure.dll&quot;: &quot;1.0.0.0&quot;,
+        ///  &quot;Microsoft.Management.Infrastructure.Native.dll&quot;: &quot;1.0.0.0&quot;,
+        ///  &quot;Microsoft.VisualBasic.dll&quot;: &quot;10.0.4.0&quot;,
+        ///  &quot;Microsoft.Win32.Primitives.dll&quot;: &quot;4.1.1.0&quot;,
+        ///  &quot;Microsoft.Win32.Registry.AccessControl.dll&quot;: &quot;4.0.3.0&quot;,
+        ///  &quot;Micro [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string pwsh6_2_4 {
+            get {
+                return ResourceManager.GetString("pwsh6_2_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///  &quot;Accessibility.dll&quot;: &quot;4.0.0.0&quot;,
+        ///  &quot;DirectWriteForwarder&quot;: &quot;4.0.0.0&quot;,
+        ///  &quot;Markdig.Signed&quot;: &quot;0.18.1.0&quot;,
+        ///  &quot;Microsoft.ApplicationInsights&quot;: &quot;2.13.1.12554&quot;,
+        ///  &quot;Microsoft.CodeAnalysis.CSharp&quot;: &quot;3.4.0.0&quot;,
+        ///  &quot;Microsoft.CodeAnalysis&quot;: &quot;3.4.0.0&quot;,
+        ///  &quot;Microsoft.CSharp&quot;: &quot;4.0.5.0&quot;,
+        ///  &quot;Microsoft.Management.Infrastructure&quot;: &quot;1.0.0.0&quot;,
+        ///  &quot;Microsoft.Management.Infrastructure.Native&quot;: &quot;1.0.0.0&quot;,
+        ///  &quot;Microsoft.VisualBasic.Core&quot;: &quot;10.0.5.0&quot;,
+        ///  &quot;Microsoft.VisualBasic&quot;: &quot;10.0.0.0&quot;,
+        ///  &quot;Microsoft.Win32.Primitives&quot;:  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string pwsh7_0_0 {
+            get {
+                return ResourceManager.GetString("pwsh7_0_0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The cmdlet &apos;{0}&apos; no longer supports the alias &apos;{1}&apos;..
         /// </summary>
         internal static string RemovedCmdletAliasDescription {
