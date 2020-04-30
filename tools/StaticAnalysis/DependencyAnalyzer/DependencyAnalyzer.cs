@@ -18,6 +18,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Newtonsoft.Json;
+using StaticAnalysis.Netcore.Properties;
 using Tools.Common.Helpers;
 using Tools.Common.Issues;
 using Tools.Common.Loaders;
@@ -38,6 +40,7 @@ namespace StaticAnalysis.DependencyAnalyzer
         private const int AssemblyVersionFileVersionMismatch = 7000;
         private const int CommonAuthenticationMismatch = 7010;
 
+        /*
         private static readonly List<string> FrameworkAssemblies = new List<string>
         {
             "Microsoft.CSharp",
@@ -183,6 +186,8 @@ namespace StaticAnalysis.DependencyAnalyzer
             "System.Data.SqlClient",
             "System.Security.Cryptography.ProtectedData"
         };
+        */
+        private static Dictionary<string, string> FrameworkAssemblies;
 
         private readonly Dictionary<string, AssemblyRecord> _assemblies =
             new Dictionary<string, AssemblyRecord>(StringComparer.OrdinalIgnoreCase);
@@ -219,39 +224,55 @@ namespace StaticAnalysis.DependencyAnalyzer
                 throw new ArgumentNullException("directories");
             }
 
-            _versionConflictLogger = Logger.CreateLogger<AssemblyVersionConflict>("AssemblyVersionConflict.csv");
-            _sharedConflictLogger = Logger.CreateLogger<SharedAssemblyConflict>("SharedAssemblyConflict.csv");
-            _missingAssemblyLogger = Logger.CreateLogger<MissingAssembly>("MissingAssemblies.csv");
-            _extraAssemblyLogger = Logger.CreateLogger<ExtraAssembly>("ExtraAssemblies.csv");
-            _dependencyMapLogger = Logger.CreateLogger<DependencyMap>("DependencyMap.csv");
-            foreach (var baseDirectory in directories)
+            var pwsh5_1 = JsonConvert.DeserializeObject<Dictionary<string, string>>(Resources.pwsh5_1_0);
+            var pwsh6_2_4 = JsonConvert.DeserializeObject<Dictionary<string, string>>(Resources.pwsh6_2_4);
+            var pwsh7_0 = JsonConvert.DeserializeObject<Dictionary<string, string>>(Resources.pwsh7_0_0);
+
+            var pwshToFrameworkAssemblies = new Dictionary<string, Dictionary<string, string>>()
             {
-                foreach (var directoryPath in Directory.EnumerateDirectories(baseDirectory))
+                {"5.1.0", pwsh5_1 },
+                {"6.2.4", pwsh6_2_4 },
+                {"7.0.0",  pwsh7_0 }
+            };
+
+            foreach (var pwshItem in pwshToFrameworkAssemblies)
+            {
+                var pwshVersion = pwshItem.Key;
+                FrameworkAssemblies = new Dictionary<string, string>(pwshItem.Value, StringComparer.InvariantCultureIgnoreCase);
+                _versionConflictLogger = Logger.CreateLogger<AssemblyVersionConflict>($"AssemblyVersionConflict{pwshVersion}.csv");
+                _sharedConflictLogger = Logger.CreateLogger<SharedAssemblyConflict>($"SharedAssemblyConflict{pwshVersion}.csv");
+                _missingAssemblyLogger = Logger.CreateLogger<MissingAssembly>($"MissingAssemblies{pwshVersion}.csv");
+                _extraAssemblyLogger = Logger.CreateLogger<ExtraAssembly>($"ExtraAssemblies{pwshVersion}.csv");
+                _dependencyMapLogger = Logger.CreateLogger<DependencyMap>($"DependencyMap{pwshVersion}.csv");
+                foreach (var baseDirectory in directories)
                 {
-                    if (modulesToAnalyze != null &&
-                        modulesToAnalyze.Any() &&
-                        !modulesToAnalyze.Any(m => directoryPath.EndsWith(m)))
+                    foreach (var directoryPath in Directory.EnumerateDirectories(baseDirectory))
                     {
-                        continue;
-                    }
+                        if (modulesToAnalyze != null &&
+                            modulesToAnalyze.Any() &&
+                            !modulesToAnalyze.Any(m => directoryPath.EndsWith(m)))
+                        {
+                            continue;
+                        }
 
-                    if (!Directory.Exists(directoryPath))
-                    {
-                        throw new InvalidOperationException("Please pass a valid directory name as the first parameter");
-                    }
+                        if (!Directory.Exists(directoryPath))
+                        {
+                            throw new InvalidOperationException("Please pass a valid directory name as the first parameter");
+                        }
 
-                    Logger.WriteMessage("Processing Directory {0}", directoryPath);
-                    _assemblies.Clear();
-                    _versionConflictLogger.Decorator.AddDecorator(r => { r.Directory = directoryPath; }, "Directory");
-                    _missingAssemblyLogger.Decorator.AddDecorator(r => { r.Directory = directoryPath; }, "Directory");
-                    _extraAssemblyLogger.Decorator.AddDecorator(r => { r.Directory = directoryPath; }, "Directory");
-                    _dependencyMapLogger.Decorator.AddDecorator(r => { r.Directory = directoryPath; }, "Directory");
-                    _isNetcore = directoryPath.Contains("Az.");
-                    ProcessDirectory(directoryPath);
-                    _versionConflictLogger.Decorator.Remove("Directory");
-                    _missingAssemblyLogger.Decorator.Remove("Directory");
-                    _extraAssemblyLogger.Decorator.Remove("Directory");
-                    _dependencyMapLogger.Decorator.Remove("Directory");
+                        Logger.WriteMessage("Processing Directory {0}", directoryPath);
+                        _assemblies.Clear();
+                        _versionConflictLogger.Decorator.AddDecorator(r => { r.Directory = directoryPath; }, "Directory");
+                        _missingAssemblyLogger.Decorator.AddDecorator(r => { r.Directory = directoryPath; }, "Directory");
+                        _extraAssemblyLogger.Decorator.AddDecorator(r => { r.Directory = directoryPath; }, "Directory");
+                        _dependencyMapLogger.Decorator.AddDecorator(r => { r.Directory = directoryPath; }, "Directory");
+                        _isNetcore = directoryPath.Contains("Az.");
+                        ProcessDirectory(directoryPath);
+                        _versionConflictLogger.Decorator.Remove("Directory");
+                        _missingAssemblyLogger.Decorator.Remove("Directory");
+                        _extraAssemblyLogger.Decorator.Remove("Directory");
+                        _dependencyMapLogger.Decorator.Remove("Directory");
+                    }
                 }
             }
         }
@@ -262,6 +283,9 @@ namespace StaticAnalysis.DependencyAnalyzer
             var fullPath = Path.GetFullPath(path);
             try
             {
+                if (path.EndsWith("System.Runtime.CompilerServices.Unsafe.dll"))
+                {
+                }
                 var assembly = LoadByReflectionFromFile(fullPath);
                 var versionInfo = FileVersionInfo.GetVersionInfo(fullPath);
                 result = new AssemblyRecord
@@ -373,7 +397,7 @@ namespace StaticAnalysis.DependencyAnalyzer
 
         private static bool IsFrameworkAssembly(string name)
         {
-            return FrameworkAssemblies.Contains(name, StringComparer.OrdinalIgnoreCase);
+            return FrameworkAssemblies.ContainsKey(name.ToLower());
         }
 
         private void ProcessDirectory(string directoryPath)
