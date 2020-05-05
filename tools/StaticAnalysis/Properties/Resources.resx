@@ -256,6 +256,9 @@
     <value>Revert the position change made to parameter '{0}' for parameter set '{1}'.</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="common" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\common.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="pwsh5_1_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pwsh5.1.0.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>

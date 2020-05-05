@@ -1,0 +1,6 @@
+{
+  "Mono.Posix.NETStandard": "0.0.1.0",
+  "System.Diagnostics.DiagnosticSource": "0.0.1.0",
+  "System.Management.Automation": "3.0.0.0",
+  "System.Private.CoreLib": "0.0.1.0"
+}

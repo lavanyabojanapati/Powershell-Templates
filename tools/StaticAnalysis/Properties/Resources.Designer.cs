@@ -537,7 +537,15 @@ namespace StaticAnalysis.Netcore.Properties {
                 return ResourceManager.GetString("pwsh7_0_0", resourceCulture);
             }
         }
-        
+
+        internal static string CommonAssemblies
+        {
+            get
+            {
+                return ResourceManager.GetString("common", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to The cmdlet &apos;{0}&apos; no longer supports the alias &apos;{1}&apos;..
         /// </summary>

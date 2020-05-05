@@ -18,6 +18,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using Microsoft.ApplicationInsights.Metrics.Extensibility;
 using Newtonsoft.Json;
 using StaticAnalysis.Netcore.Properties;
 using Tools.Common.Helpers;
@@ -39,6 +40,8 @@ namespace StaticAnalysis.DependencyAnalyzer
         private const int MissingAssemblyRecord = 3000;
         private const int AssemblyVersionFileVersionMismatch = 7000;
         private const int CommonAuthenticationMismatch = 7010;
+
+        private const string AzAccounts = "Az.Accounts";
 
         /*
         private static readonly List<string> FrameworkAssemblies = new List<string>
@@ -195,7 +198,6 @@ namespace StaticAnalysis.DependencyAnalyzer
             new Dictionary<AssemblyName, AssemblyRecord>(new AssemblyNameComparer());
         private readonly Dictionary<string, AssemblyRecord> _identicalSharedAssemblies =
             new Dictionary<string, AssemblyRecord>(StringComparer.OrdinalIgnoreCase);
-        private AssemblyLoader _loader;
         private ReportLogger<AssemblyVersionConflict> _versionConflictLogger;
         private ReportLogger<SharedAssemblyConflict> _sharedConflictLogger;
         private ReportLogger<MissingAssembly> _missingAssemblyLogger;
@@ -212,6 +214,16 @@ namespace StaticAnalysis.DependencyAnalyzer
         public AnalysisLogger Logger { get; set; }
         public string Name { get; private set; }
 
+        private static Dictionary<string, Version> Pwsh5Assemblies;
+        private static Dictionary<string, Version> Pwsh6Assemblies;
+        private static Dictionary<string, Version> Pwsh7Assemblies;
+
+        static DependencyAnalyzer() {
+            Pwsh5Assemblies = JsonConvert.DeserializeObject<Dictionary<string, Version>>(Resources.pwsh5_1_0);
+            Pwsh6Assemblies = JsonConvert.DeserializeObject<Dictionary<string, Version>>(Resources.pwsh6_2_4);
+            Pwsh7Assemblies = JsonConvert.DeserializeObject<Dictionary<string, Version>>(Resources.pwsh7_0_0);
+        }
+
         public void Analyze(IEnumerable<string> scopes)
         {
             Analyze(scopes, null);
@@ -224,16 +236,49 @@ namespace StaticAnalysis.DependencyAnalyzer
                 throw new ArgumentNullException("directories");
             }
 
-            var pwsh5_1 = JsonConvert.DeserializeObject<Dictionary<string, string>>(Resources.pwsh5_1_0);
-            var pwsh6_2_4 = JsonConvert.DeserializeObject<Dictionary<string, string>>(Resources.pwsh6_2_4);
-            var pwsh7_0 = JsonConvert.DeserializeObject<Dictionary<string, string>>(Resources.pwsh7_0_0);
+            var pwsh5_1 = JsonConvert.DeserializeObject<Dictionary<string, Version>>(Resources.pwsh5_1_0);
+            var pwsh6_2_4 = JsonConvert.DeserializeObject<Dictionary<string, Version>>(Resources.pwsh6_2_4);
+            var pwsh7_0 = JsonConvert.DeserializeObject<Dictionary<string, Version>>(Resources.pwsh7_0_0);
+
+            UpdateReferenceAssemblies(JsonConvert.DeserializeObject<Dictionary<string, Version>>(Resources.CommonAssemblies));
 
             var pwshToFrameworkAssemblies = new Dictionary<string, Dictionary<string, string>>()
             {
-                {"5.1.0", pwsh5_1 },
-                {"6.2.4", pwsh6_2_4 },
-                {"7.0.0",  pwsh7_0 }
             };
+
+            Dictionary<string, AssemblyRecord> accountsAssemblies = LoadAzAccountsAssmeblies(directories);
+            CheckAssemblies(accountsAssemblies);
+            foreach(var item in accountsAssemblies)
+            {
+                UpdateReferenceAssemblies(item.Key, item.Value.Version);
+            }
+
+            foreach (var baseDirectory in directories)
+            {
+                foreach (var directoryPath in Directory.EnumerateDirectories(baseDirectory))
+                {
+                    if (directoryPath.EndsWith(AzAccounts))
+                    {
+                        continue;
+                    }
+
+                    if (modulesToAnalyze != null &&
+                        modulesToAnalyze.Any() &&
+                        !modulesToAnalyze.Any(m => directoryPath.EndsWith(m)))
+                    {
+                        continue;
+                    }
+
+                    if (!Directory.Exists(directoryPath))
+                    {
+                        throw new InvalidOperationException("Please pass a valid directory name as the first parameter");
+                    }
+
+                    Dictionary<string, AssemblyRecord> assemblies = LoadAssemblies(directoryPath);
+                    CheckAssemblies(assemblies);
+                }
+            }
+
 
             foreach (var pwshItem in pwshToFrameworkAssemblies)
             {
@@ -248,6 +293,11 @@ namespace StaticAnalysis.DependencyAnalyzer
                 {
                     foreach (var directoryPath in Directory.EnumerateDirectories(baseDirectory))
                     {
+                        if (directoryPath.EndsWith(AzAccounts))
+                        {
+                            continue;
+                        }
+
                         if (modulesToAnalyze != null &&
                             modulesToAnalyze.Any() &&
                             !modulesToAnalyze.Any(m => directoryPath.EndsWith(m)))
@@ -267,7 +317,7 @@ namespace StaticAnalysis.DependencyAnalyzer
                         _extraAssemblyLogger.Decorator.AddDecorator(r => { r.Directory = directoryPath; }, "Directory");
                         _dependencyMapLogger.Decorator.AddDecorator(r => { r.Directory = directoryPath; }, "Directory");
                         _isNetcore = directoryPath.Contains("Az.");
-                        ProcessDirectory(directoryPath);
+                        //ProcessDirectory(directoryPath);
                         _versionConflictLogger.Decorator.Remove("Directory");
                         _missingAssemblyLogger.Decorator.Remove("Directory");
                         _extraAssemblyLogger.Decorator.Remove("Directory");
@@ -277,7 +327,91 @@ namespace StaticAnalysis.DependencyAnalyzer
             }
         }
 
-        private AssemblyRecord CreateAssemblyRecord(string path)
+        private void UpdateReferenceAssemblies(Dictionary<string, Version> assemblies)
+        {
+            foreach (var item in assemblies)
+            {
+                UpdateReferenceAssemblies(item.Key, item.Value);
+            }
+        }
+
+        private void UpdateReferenceAssemblies(string name, Version version)
+        {
+            if (!Pwsh5Assemblies.ContainsKey(name) || version < Pwsh5Assemblies[name])
+            {
+                Pwsh5Assemblies[name] = version;
+            }
+            if (!Pwsh6Assemblies.ContainsKey(name) || version < Pwsh6Assemblies[name])
+            {
+                Pwsh6Assemblies[name] = version;
+            }
+            if (!Pwsh7Assemblies.ContainsKey(name) || version < Pwsh7Assemblies[name])
+            {
+                Pwsh7Assemblies[name] = version;
+            }
+        }
+
+        private void CheckAssemblies(Dictionary<string, AssemblyRecord> assemblies)
+        {
+            Dictionary<string, IList<string>> missedAssemblies = new Dictionary<string, IList<string>>();
+            foreach (var item in assemblies)
+            {
+                var assemblyRecord = item.Value;
+                if (Pwsh5Assemblies.ContainsKey(assemblyRecord.Name) && Pwsh5Assemblies[assemblyRecord.Name] < assemblyRecord.Version)
+                {
+                    Console.WriteLine($"{assemblyRecord.Name} is conflicts with Windows PowerShell.");
+                }
+                if (Pwsh6Assemblies.ContainsKey(assemblyRecord.Name) && Pwsh6Assemblies[assemblyRecord.Name] < assemblyRecord.Version)
+                {
+                    Console.WriteLine($"{assemblyRecord.Name} is conflicts with PowerShell Core.");
+                }
+                if (Pwsh7Assemblies.ContainsKey(assemblyRecord.Name) && Pwsh7Assemblies[assemblyRecord.Name] < assemblyRecord.Version)
+                {
+                    Console.WriteLine($"{assemblyRecord.Name} is conflicts with PowerShell 7.");
+                }
+                foreach (var child in assemblyRecord.Children)
+                {
+                    if(assemblies.ContainsKey(child.Name))
+                    {
+                        continue;
+                    }
+                    bool missed = false;
+                    missed = missed || (!Pwsh5Assemblies.ContainsKey(child.Name));
+                    missed = missed || (!Pwsh6Assemblies.ContainsKey(child.Name));
+                    missed = missed || (!Pwsh7Assemblies.ContainsKey(child.Name));
+                    if(missed)
+                    {
+                        if (!missedAssemblies.ContainsKey(child.Name))
+                        {
+                            missedAssemblies[child.Name] = new List<string>();
+                        }
+                        missedAssemblies[child.Name].Add(assemblyRecord.Name);
+                    }
+                }
+            }
+            foreach (var item in missedAssemblies)
+            {
+                Console.WriteLine($"{item.Key} is missing due to its parent(s) [{String.Join(", ", item.Value.ToArray())}].");
+            }
+        }
+
+        private Dictionary<string, AssemblyRecord> LoadAzAccountsAssmeblies(IEnumerable<string> directories)
+        {
+            foreach (var baseDirectory in directories)
+            {
+                foreach (var directoryPath in Directory.EnumerateDirectories(baseDirectory))
+                {
+                    if(directoryPath.EndsWith(AzAccounts))
+                    {
+                        return LoadAssemblies(directoryPath);
+                    }
+                }
+
+            }
+            throw new InvalidOperationException("Cannot find the folder of Az.Accounts module.");
+        }
+
+        private AssemblyRecord CreateAssemblyRecord(AssemblyLoader loader, string path)
         {
             AssemblyRecord result = null;
             var fullPath = Path.GetFullPath(path);
@@ -286,7 +420,7 @@ namespace StaticAnalysis.DependencyAnalyzer
                 if (path.EndsWith("System.Runtime.CompilerServices.Unsafe.dll"))
                 {
                 }
-                var assembly = LoadByReflectionFromFile(fullPath);
+                var assembly = LoadByReflectionFromFile(loader, fullPath);
                 var versionInfo = FileVersionInfo.GetVersionInfo(fullPath);
                 result = new AssemblyRecord
                 {
@@ -344,9 +478,9 @@ namespace StaticAnalysis.DependencyAnalyzer
             return true;
         }
 
-        private AssemblyMetadata LoadByReflectionFromFile(string assemblyPath)
+        private AssemblyMetadata LoadByReflectionFromFile(AssemblyLoader loader, string assemblyPath)
         {
-            var info = _loader.GetReflectedAssemblyFromFile(assemblyPath);
+            var info = loader.GetReflectedAssemblyFromFile(assemblyPath);
             if (info == null)
             {
                 throw new InvalidOperationException();
@@ -400,14 +534,35 @@ namespace StaticAnalysis.DependencyAnalyzer
             return FrameworkAssemblies.ContainsKey(name.ToLower());
         }
 
+        private Dictionary<string, AssemblyRecord> LoadAssemblies(string directoryPath)
+        {
+            var savedDirectory = Directory.GetCurrentDirectory();
+            Directory.SetCurrentDirectory(directoryPath);
+            AssemblyLoader loader = new AssemblyLoader();
+            Dictionary<string, AssemblyRecord> assemblies = new Dictionary<string, AssemblyRecord>(StringComparer.OrdinalIgnoreCase);
+            foreach (var file in Directory.GetFiles(directoryPath).Where(file => file.EndsWith(".dll")))
+            {
+                var assembly = CreateAssemblyRecord(loader, file);
+                //if (assembly?.Name != null && !IsFrameworkAssembly(assembly.Name))
+                if (assembly?.Name != null)
+                {
+                    assemblies[assembly.Name] = assembly;
+                    //AddSharedAssembly(assembly);
+                }
+
+            }
+            Directory.SetCurrentDirectory(savedDirectory);
+            return assemblies;
+        }
+
         private void ProcessDirectory(string directoryPath)
         {
             var savedDirectory = Directory.GetCurrentDirectory();
             Directory.SetCurrentDirectory(directoryPath);
-            _loader = new AssemblyLoader();
+            AssemblyLoader loader = new AssemblyLoader();
             foreach (var file in Directory.GetFiles(directoryPath).Where(file => file.EndsWith(".dll")))
             {
-                var assembly = CreateAssemblyRecord(file);
+                var assembly = CreateAssemblyRecord(loader, file);
                 if (assembly?.Name != null && !IsFrameworkAssembly(assembly.Name))
                 {
                     _assemblies[assembly.Name] = assembly;
@@ -419,7 +574,6 @@ namespace StaticAnalysis.DependencyAnalyzer
             // Now check for assembly mismatches
             foreach (var assembly in _assemblies.Values)
             {
-
                 foreach (var reference in assembly.Children)
                 {
                     CheckAssemblyReference(reference, assembly);

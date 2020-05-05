@@ -26,11 +26,6 @@ namespace StaticAnalysis
     /// </summary>
     public class Program
     {
-        static IList<IStaticAnalyzer> Analyzers = new List<IStaticAnalyzer>()
-        {
-            new DependencyAnalyzer.DependencyAnalyzer()
-        };
-
         static IList<string> ExceptionFileNames = new List<string>()
         {
             "AssemblyVersionConflict.csv",
@@ -105,6 +100,8 @@ namespace StaticAnalysis
                     }
                 }
 
+                IList<IStaticAnalyzer> Analyzers = new List<IStaticAnalyzer>();
+                Analyzers.Add(new DependencyAnalyzer.DependencyAnalyzer());
                 Analyzers.Add(new SignatureVerifier.SignatureVerifier());
                 Analyzers.Add(new BreakingChangeAnalyzer.BreakingChangeAnalyzer());
 
