@@ -2,7 +2,6 @@ function Remove-AzFunctionApp {
     [OutputType([System.Boolean])]
     [CmdletBinding(DefaultParameterSetName='ByName', SupportsShouldProcess=$true, ConfirmImpact='Medium')]
     [Microsoft.Azure.PowerShell.Cmdlets.Functions.Description('Deletes a function app.')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Functions.Profile('latest-2019-04-30')]
     param(
         [Parameter(ParameterSetName='ByName', Mandatory=$true, HelpMessage='The name of function app.')]
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Category('Path')]
@@ -24,7 +23,7 @@ function Remove-AzFunctionApp {
         ${SubscriptionId},
 
         [Parameter(ParameterSetName='ByObjectInput', Mandatory=$true, ValueFromPipeline=$true)]
-        [Microsoft.Azure.PowerShell.Cmdlets.Functions.Models.Api20180201.ISite]
+        [Microsoft.Azure.PowerShell.Cmdlets.Functions.Models.Api20190801.ISite]
         [ValidateNotNull()]
         ${InputObject},
 
@@ -84,17 +83,16 @@ function Remove-AzFunctionApp {
         ${ProxyUseDefaultCredentials}
     )
     process {
-
         # The input object is an ISite. This needs to be transformed into a FunctionsIdentity
         if ($PsCmdlet.ParameterSetName -eq "ByObjectInput")
-        {            
+        {
             if ($PSBoundParameters.ContainsKey("InputObject"))
             {
-                $null = $PSBoundParameters.Remove("InputObject")
+                $PSBoundParameters.Remove("InputObject")  | Out-Null
             }
 
             $functionsIdentity = CreateFunctionsIdentity -InputObject $InputObject
-            $null = $PSBoundParameters.Add("InputObject", $functionsIdentity)
+            $PSBoundParameters.Add("InputObject", $functionsIdentity)  | Out-Null
 
             # Set the name variable for the ShouldProcess and ShouldContinue calls
             $Name = $InputObject.Name
@@ -104,10 +102,10 @@ function Remove-AzFunctionApp {
         {
             if ($Force.IsPresent  -or $PsCmdlet.ShouldContinue("Delete function app '$Name'? This operation cannot be undone. Are you sure?", "Deleting function app"))
             {
-               # Remove bound parameters from the dictionary that cannot be process by the intenal cmdlets
+            # Remove bound parameters from the dictionary that cannot be process by the intenal cmdlets
                 if ($PSBoundParameters.ContainsKey("Force"))
                 {
-                    $null = $PSBoundParameters.Remove("Force")
+                    $PSBoundParameters.Remove("Force")  | Out-Null
                 }
 
                 Az.Functions.internal\Remove-AzFunctionApp @PSBoundParameters

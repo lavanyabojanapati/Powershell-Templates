@@ -2,7 +2,6 @@ function Remove-AzFunctionAppPlan {
     [OutputType([System.Boolean])]
     [CmdletBinding(DefaultParameterSetName='ByName', SupportsShouldProcess=$true, ConfirmImpact='Medium')]
     [Microsoft.Azure.PowerShell.Cmdlets.Functions.Description('Deletes a function app plan.')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Functions.Profile('latest-2019-04-30')]
     param(
         [Parameter(ParameterSetName='ByName', Mandatory=$true, HelpMessage='The name of function app.')]
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Category('Path')]
@@ -24,7 +23,7 @@ function Remove-AzFunctionAppPlan {
         ${SubscriptionId},
 
         [Parameter(ParameterSetName='ByObjectInput', Mandatory=$true, ValueFromPipeline=$true)]
-        [Microsoft.Azure.PowerShell.Cmdlets.Functions.Models.Api20180201.IAppServicePlan]
+        [Microsoft.Azure.PowerShell.Cmdlets.Functions.Models.Api20190801.IAppServicePlan]
         [ValidateNotNull()]
         ${InputObject},
 
@@ -51,6 +50,12 @@ function Remove-AzFunctionAppPlan {
         ${Break},
 
         [Parameter(DontShow)]
+        [Microsoft.Azure.PowerShell.Cmdlets.Functions.Category('Runtime')]
+        [System.Uri]
+        # The URI for the proxy server to use
+        ${Proxy},
+
+        [Parameter(DontShow)]
         [ValidateNotNull()]
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Category('Runtime')]
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Runtime.SendAsyncStep[]]
@@ -63,12 +68,6 @@ function Remove-AzFunctionAppPlan {
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Runtime.SendAsyncStep[]]
         # SendAsync Pipeline Steps to be prepended to the front of the pipeline
         ${HttpPipelinePrepend},
-
-        [Parameter(DontShow)]
-        [Microsoft.Azure.PowerShell.Cmdlets.Functions.Category('Runtime')]
-        [System.Uri]
-        # The URI for the proxy server to use
-        ${Proxy},
 
         [Parameter(DontShow)]
         [ValidateNotNull()]
@@ -85,17 +84,18 @@ function Remove-AzFunctionAppPlan {
     )
     
     process {
-
         if ($PsCmdlet.ParameterSetName -eq "ByObjectInput")
-        {            
+        {
             if ($PSBoundParameters.ContainsKey("InputObject"))
             {
-                if ($InputObject.Name)
-                {
-                    # Set the name variable for the ShouldProcess and ShouldContinue calls
-                    $Name = $InputObject.Name
-                }
+                $PSBoundParameters.Remove("InputObject")  | Out-Null
             }
+
+            $functionsIdentity = CreateFunctionsIdentity -InputObject $InputObject
+            $PSBoundParameters.Add("InputObject", $functionsIdentity)  | Out-Null
+
+            # Set the name variable for the ShouldProcess and ShouldContinue calls
+            $Name = $InputObject.Name
         }
 
         if ($PsCmdlet.ShouldProcess($Name, "Deleting function app plan"))
@@ -105,7 +105,7 @@ function Remove-AzFunctionAppPlan {
                 # Remove bound parameters from the dictionary that cannot be process by the intenal cmdlets
                 if ($PSBoundParameters.ContainsKey("Force"))
                 {
-                    $null = $PSBoundParameters.Remove("Force")
+                    $PSBoundParameters.Remove("Force")  | Out-Null
                 }
 
                 Az.Functions.internal\Remove-AzFunctionAppPlan @PSBoundParameters

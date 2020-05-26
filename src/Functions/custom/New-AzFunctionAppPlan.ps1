@@ -1,28 +1,31 @@
 function New-AzFunctionAppPlan {
-    [OutputType([Microsoft.Azure.PowerShell.Cmdlets.Functions.Models.Api20180201.IAppServicePlan])]
+    [OutputType([Microsoft.Azure.PowerShell.Cmdlets.Functions.Models.Api20190801.IAppServicePlan])]
     [Microsoft.Azure.PowerShell.Cmdlets.Functions.Description('Creates a function app service plan.')]
     [CmdletBinding(PositionalBinding=$false, SupportsShouldProcess, ConfirmImpact='Medium')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Functions.Profile('latest-2019-04-30')]
     param(
         [Parameter(Mandatory=$true, HelpMessage='Name of the App Service plan.')]
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Category('Path')]
+        [ValidateNotNullOrEmpty()]
         [System.String]
         ${Name},
 
         [Parameter(Mandatory=$true, HelpMessage='Name of the resource group to which the resource belongs.')]
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Category('Path')]
+        [ValidateNotNullOrEmpty()]
         [System.String]
         ${ResourceGroupName},
 
         [Parameter(HelpMessage='The Azure subscription ID.')]
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Category('Path')]
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
+        [ValidateNotNullOrEmpty()]
         [System.String]
         ${SubscriptionId},
 
         [Parameter(Mandatory=$true, HelpMessage='The plan sku. Valid inputs are: EP1, P2, EP3')]
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Category('Body')]
         [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.Functions.Support.SkuType])]
+        [ValidateNotNullOrEmpty()]
         [System.String]
         # Sku (EP1, EP2 or EP3)
         ${Sku},
@@ -30,6 +33,7 @@ function New-AzFunctionAppPlan {
         [Parameter(Mandatory=$true, HelpMessage='The worker type for the plan. Valid inputs are: Windows or Linux.')]
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Category('Runtime')]
         [ArgumentCompleter([Microsoft.Azure.PowerShell.Cmdlets.Functions.Support.WorkerType])]
+        [ValidateNotNullOrEmpty()]
         [System.String]
         # Worker type (Linux or Windows)
         ${WorkerType},
@@ -43,7 +47,7 @@ function New-AzFunctionAppPlan {
         [Parameter(HelpMessage='The maximum number of workers for the app service plan.')]
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Category('Body')]
         [System.Int32]
-        [ValidateRange(0,20)]
+        [ValidateRange(1,100)]
         [Alias("MaxBurst")]
         ${MaximumWorkerCount},
 
@@ -51,13 +55,14 @@ function New-AzFunctionAppPlan {
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Category('Body')]
         [System.Int32]
         [Alias("MinInstances")]
-        [ValidateRange(0,20)]
+        [ValidateRange(1,20)]
         ${MinimumWorkerCount},
 
         [Parameter(HelpMessage='Resource tags.')]
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Category('Body')]
-        [Microsoft.Azure.PowerShell.Cmdlets.Functions.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.Functions.Models.Api20150801Preview.IResourceTags]))]
+        [Microsoft.Azure.PowerShell.Cmdlets.Functions.Runtime.Info(PossibleTypes=([Microsoft.Azure.PowerShell.Cmdlets.Functions.Models.Api20190801.IResourceTags]))]
         [System.Collections.Hashtable]
+        [ValidateNotNull()]
         ${Tag},
 
         [Parameter(HelpMessage='Run the command asynchronously.')]
@@ -83,7 +88,6 @@ function New-AzFunctionAppPlan {
         # Wait for .NET debugger to attach
         ${Break},
 
-        <#
         [Parameter(DontShow)]
         [ValidateNotNull()]
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Category('Runtime')]
@@ -97,7 +101,6 @@ function New-AzFunctionAppPlan {
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Runtime.SendAsyncStep[]]
         # SendAsync Pipeline Steps to be prepended to the front of the pipeline
         ${HttpPipelinePrepend},
-        #>
 
         [Parameter(DontShow)]
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Category('Runtime')]
@@ -119,119 +122,99 @@ function New-AzFunctionAppPlan {
         ${ProxyUseDefaultCredentials}
     )
     process {
-
-        if ($PSBoundParameters.ContainsKey("AsJob"))
+        # Remove bound parameters from the dictionary that cannot be process by the intenal cmdlets.
+        foreach ($paramName in @("Sku", "WorkerType", "MaximumWorkerCount", "MinimumWorkerCount", "Location", "Tag"))
         {
-            $null = $PSBoundParameters.Remove("AsJob")
-
-            $modulePath = Join-Path $PSScriptRoot "../Az.Functions.psd1"
-
-            Start-Job -ScriptBlock {
-                param($arg, $modulePath)
-                Import-Module $modulePath -Force
-                Az.Functions\New-AzFunctionAppPlan @arg
-            } -ArgumentList $PSBoundParameters, $modulePath
+            if ($PSBoundParameters.ContainsKey($paramName))
+            {
+                $PSBoundParameters.Remove($paramName)  | Out-Null
+            }
         }
 
-        else
+        $Sku = NormalizeSku -Sku $Sku
+        $tier = GetSkuName -Sku $Sku
+
+        if (($MaximumWorkerCount -gt 0) -and ($tier -ne "ElasticPremium"))
         {
-            # Remove bound parameters from the dictionary that cannot be process by the intenal cmdlets.
-            foreach ($paramName in @("Sku", "WorkerType", "MaximumWorkerCount", "MinimumWorkerCount", "Location"))
+            $errorMessage = "MaximumWorkerCount is only supported for Elastic Premium (EP) plans."
+            $exception = [System.InvalidOperationException]::New($errorMessage)
+            ThrowTerminatingError -ErrorId "MaximumWorkerCountIsOnlySupportedForElasticPremiumPlan" `
+                                -ErrorMessage $errorMessage `
+                                -ErrorCategory ([System.Management.Automation.ErrorCategory]::InvalidOperation) `
+                                -Exception $exception
+        }
+
+        if ($MaximumWorkerCount -lt $MinimumWorkerCount)
+        {
+            $errorMessage = "MinimumWorkerCount '$($MinimumWorkerCount)' cannot be less than '$($MaximumWorkerCount)'."
+            $exception = [System.InvalidOperationException]::New($errorMessage)
+            ThrowTerminatingError -ErrorId "MaximumWorkerCountIsOnlySupportedForElasticPremiumPlan" `
+                                -ErrorMessage $errorMessage `
+                                -ErrorCategory ([System.Management.Automation.ErrorCategory]::InvalidOperation) `
+                                -Exception $exception
+        }
+
+        # Validate location for a Premium plan
+        $OSIsLinux = $WorkerType -eq "Linux"
+        $params = GetParameterKeyValues -PSBoundParametersDictionary $PSBoundParameters `
+                                        -ParameterList @("SubscriptionId", "HttpPipelineAppend", "HttpPipelinePrepend")
+        ValidatePremiumPlanLocation -Location $Location -OSIsLinux:$OSIsLinux @params
+
+        $servicePlan = New-Object -TypeName Microsoft.Azure.PowerShell.Cmdlets.Functions.Models.Api20190801.AppServicePlan
+
+        # Plan settings
+        $servicePlan.SkuTier = $tier
+        $servicePlan.SkuName = $Sku
+        $servicePlan.Location = $Location
+        $servicePlan.Reserved = ($WorkerType -eq "Linux")
+
+        if ($Tag.Count -gt 0)
+        {
+            $resourceTag = NewResourceTag -Tag $Tag
+            $servicePlan.Tag = $resourceTag
+        }
+
+        if ($MinimumWorkerCount -gt 0)
+        {
+            $servicePlan.Capacity = $MinimumWorkerCount
+        }
+
+        if ($MaximumWorkerCount -gt 0)
+        {
+            $servicePlan.MaximumElasticWorkerCount = $MaximumWorkerCount
+        }
+
+        # Add the service plan definition
+        $PSBoundParameters.Add("AppServicePlan", $servicePlan)  | Out-Null
+
+        if ($PsCmdlet.ShouldProcess($Name, "Creating function app plan"))
+        {
+            # Save the ErrorActionPreference
+            $currentErrorActionPreference = $ErrorActionPreference
+            $ErrorActionPreference = 'Stop'
+
+            try
             {
-                if ($PSBoundParameters.ContainsKey($paramName))
+                Az.Functions.internal\New-AzFunctionAppPlan @PSBoundParameters
+            }
+            catch
+            {
+                $errorMessage = GetErrorMessage -Response $_
+                if ($errorMessage)
                 {
-                    $null = $PSBoundParameters.Remove($paramName)
+                    $exception = [System.InvalidOperationException]::New($errorMessage)
+                    ThrowTerminatingError -ErrorId "FailedToCreateFunctionAppPlan" `
+                                            -ErrorMessage $errorMessage `
+                                            -ErrorCategory ([System.Management.Automation.ErrorCategory]::InvalidOperation) `
+                                            -Exception $exception
                 }
+
+                throw $_
             }
-
-            $Sku = NormalizeSku -Sku $Sku
-            $tier = GetSkuName -Sku $Sku
-
-            if (($MaximumWorkerCount -gt 0) -and ($tier -ne "ElasticPremium"))
+            finally
             {
-                $errorMessage = "MaximumWorkerCount is only supported for Elastic Premium (EP) plans."
-                $exception = [System.InvalidOperationException]::New($errorMessage)
-                ThrowTerminatingError -ErrorId "MaximumWorkerCountIsOnlySupportedForElasticPremiumPlan" `
-                                    -ErrorMessage $errorMessage `
-                                    -ErrorCategory ([System.Management.Automation.ErrorCategory]::InvalidOperation) `
-                                    -Exception $exception
-            }
-
-            if ($MaximumWorkerCount -lt $MinimumWorkerCount)
-            {
-                $errorMessage = "MinimumWorkerCount '$($MinimumWorkerCount)' cannot be less than '$($MaximumWorkerCount)'."
-                $exception = [System.InvalidOperationException]::New($errorMessage)
-                ThrowTerminatingError -ErrorId "MaximumWorkerCountIsOnlySupportedForElasticPremiumPlan" `
-                                    -ErrorMessage $errorMessage `
-                                    -ErrorCategory ([System.Management.Automation.ErrorCategory]::InvalidOperation) `
-                                    -Exception $exception
-            }
-
-            # Validate location for a Premium plan
-            $Location = $Location.Trim()
-            $availableLocations = @(Get-AzFunctionAppAvailableLocation -OSType $WorkerType -PlanType Premium | ForEach-Object { $_.Name })
-            if (-not ($availableLocations -contains $Location))
-            {
-                $locationOptions = $availableLocations -join ", "
-                $errorMessage = "Location is invalid. Currently supported locations are: $locationOptions"
-                $exception = [System.InvalidOperationException]::New($errorMessage)
-                ThrowTerminatingError -ErrorId "LocationIsInvalid" `
-                                      -ErrorMessage $errorMessage `
-                                      -ErrorCategory ([System.Management.Automation.ErrorCategory]::InvalidOperation) `
-                                      -Exception $exception
-            }
-
-            $servicePlan = New-Object -TypeName Microsoft.Azure.PowerShell.Cmdlets.Functions.Models.Api20180201.AppServicePlan
-
-            # Plan settings
-            $servicePlan.SkuTier = $tier
-            $servicePlan.SkuName = $Sku
-            $servicePlan.Location = $Location
-            $servicePlan.Tag = $Tag
-            $servicePlan.Reserved = ($WorkerType -eq "Linux")
-
-            if ($MinimumWorkerCount -gt 0)
-            {
-                $servicePlan.Capacity = $MinimumWorkerCount
-            }
-
-            if ($MaximumWorkerCount -gt 0)
-            {
-                $servicePlan.MaximumElasticWorkerCount = $MaximumWorkerCount
-            }
-
-            # Add the service plan definition
-            $null = $PSBoundParameters.Add("AppServicePlan", $servicePlan)
-
-            if ($PsCmdlet.ShouldProcess($Name, "Creating function app plan"))
-            {
-                # Save the ErrorActionPreference
-                $currentErrorActionPreference = $ErrorActionPreference
-                $ErrorActionPreference = 'Stop'
-
-                try
-                {
-                    Az.Functions.internal\New-AzFunctionAppPlan @PSBoundParameters
-                }
-                catch
-                {
-                    $errorMessage = GetErrorMessage -Response $_
-                    if ($errorMessage)
-                    {
-                        $exception = [System.InvalidOperationException]::New($errorMessage)
-                        ThrowTerminatingError -ErrorId "FailedToCreateFunctionAppPlan" `
-                                              -ErrorMessage $errorMessage `
-                                              -ErrorCategory ([System.Management.Automation.ErrorCategory]::InvalidOperation) `
-                                              -Exception $exception
-                    }
-
-                    throw $_
-                }
-                finally
-                {
-                    # Reset the ErrorActionPreference
-                    $ErrorActionPreference = $currentErrorActionPreference
-                }
+                # Reset the ErrorActionPreference
+                $ErrorActionPreference = $currentErrorActionPreference
             }
         }
     }

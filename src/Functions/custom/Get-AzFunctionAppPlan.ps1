@@ -1,11 +1,12 @@
 function Get-AzFunctionAppPlan {
-    [OutputType([Microsoft.Azure.PowerShell.Cmdlets.Functions.Models.Api20180201.IAppServicePlan])]
+    [OutputType([Microsoft.Azure.PowerShell.Cmdlets.Functions.Models.Api20190801.IAppServicePlan])]
     [Microsoft.Azure.PowerShell.Cmdlets.Functions.Description('Get function apps plans in a subscription.')]
     [CmdletBinding(DefaultParameterSetName='GetAll')]
-    [Microsoft.Azure.PowerShell.Cmdlets.Functions.Profile('latest-2019-04-30')]
     param(
         [Parameter(ParameterSetName='ByName', Mandatory = $true, HelpMessage='The Azure subscription ID.')]
-        [Parameter(ParameterSetName="BySubscriptionId")]
+        [Parameter(ParameterSetName="GetAll")]
+        [Parameter(ParameterSetName="ByResourceGroupName")]
+        [Parameter(ParameterSetName="ByLocation")]
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Category('Path')]
         [Microsoft.Azure.PowerShell.Cmdlets.Functions.Runtime.DefaultInfo(Script='(Get-AzContext).Subscription.Id')]
         [ValidateNotNullOrEmpty()]
@@ -89,19 +90,17 @@ function Get-AzFunctionAppPlan {
             if ($PSBoundParameters.ContainsKey("Location"))
             {
                 $locationToUse = $Location
-                $null = $PSBoundParameters.Remove("Location")
+                $PSBoundParameters.Remove("Location")  | Out-Null
             }
+        }
 
-            $plans = @(Az.Functions.internal\Get-AzFunctionAppPlan)
-        }
-        else
-        {
-            $plans = @(Az.Functions.internal\Get-AzFunctionAppPlan @PSBoundParameters)
-        }
+        $plans = @(Az.Functions.internal\Get-AzFunctionAppPlan @PSBoundParameters)
 
         if ($plans.Count -gt 0)
         {
-            GetFunctionAppPlans -Plans $plans -Location $locationToUse
+            $params = GetParameterKeyValues -PSBoundParametersDictionary $PSBoundParameters `
+                                            -ParameterList @("SubscriptionId", "HttpPipelineAppend", "HttpPipelinePrepend")
+            GetFunctionAppPlans -Plans $plans -Location $locationToUse @params
         }
     }
 }
