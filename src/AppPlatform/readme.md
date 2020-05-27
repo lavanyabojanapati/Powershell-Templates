@@ -54,11 +54,30 @@ input-file:
 
 title: AppPlatform
 module-version: 0.1.0
+identity-correction-for-post: true
 
 directive:
   - where:
+      verb: Update
+      subject: App$|Binding$|CustomDomain$|Deployment$|Service$
+    remove: true
+  - where:
       verb: Set
-      subject: Configuration$|FirewallRule$|VirtualNetworkRule$
+      subject: App$|Binding$|CustomDomain$|Deployment$|Service$
     set:
       verb: Update
+  - from: source-file-csharp
+    where: $
+    transform: $ = $.replace(/internal partial interface/, 'public partial interface');
+  - where:
+      subject: ServiceTestEndpoint$
+      variant: ^DisableViaIdentity$|^EnableViaIdentity$
+    remove: true
+  - where:
+      subject: ServiceTestKey$
+      variant: ^RegenerateViaIdentityExpanded$|^RegenerateViaIdentity$
+    remove: true
+  # - from: source-file-csharp
+  #   where: $
+  #   transform: $ = $.replace(/\).Match\(viaIdentity\)/g, ', global::System.Text.RegularExpressions.RegexOptions.IgnoreCase\).Match\(viaIdentity\)');
 ```
