@@ -58,14 +58,17 @@ identity-correction-for-post: true
 
 directive:
   - where:
-      verb: Update
-      subject: App$|Binding$|CustomDomain$|Deployment$|Service$
-    remove: true
-  - where:
       verb: Set
-      subject: App$|Binding$|CustomDomain$|Deployment$|Service$
-    set:
-      verb: Update
+      subject: App$|Binding$|CustomDomain$|Deployment$|Service$|Certificate$
+    remove: true
+  # - where:
+  #     verb: Set
+  #     subject: App$|Binding$|CustomDomain$|Deployment$|Service$
+  #   set:
+  #     verb: Update
+  - where:
+      variant: ^Create$|^CreateViaIdentity$|^CreateViaIdentityExpanded$|^Update$|^UpdateViaIdentity$
+    remove: true
   - from: source-file-csharp
     where: $
     transform: $ = $.replace(/internal partial interface/, 'public partial interface');
@@ -77,6 +80,10 @@ directive:
       subject: ServiceTestKey$
       variant: ^RegenerateViaIdentityExpanded$|^RegenerateViaIdentity$
     remove: true
+  - where:
+      subject: App
+      verb: New
+    hide: true
   # - from: source-file-csharp
   #   where: $
   #   transform: $ = $.replace(/\).Match\(viaIdentity\)/g, ', global::System.Text.RegularExpressions.RegexOptions.IgnoreCase\).Match\(viaIdentity\)');
