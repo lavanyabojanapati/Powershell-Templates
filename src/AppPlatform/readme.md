@@ -80,9 +80,13 @@ directive:
       subject: ServiceTestKey$
       variant: ^RegenerateViaIdentityExpanded$|^RegenerateViaIdentity$
     remove: true
+  # - where:
+  #     subject: App
+  #     verb: New
+  #   hide: true
   - where:
-      subject: App
-      verb: New
+      subject: Deployment
+      verb: New|Update
     hide: true
   # - from: source-file-csharp
   #   where: $
